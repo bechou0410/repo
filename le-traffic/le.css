@@ -10,8 +10,8 @@
 /* Hallmark · finish-review: subagent, second round after the music re-capture and the iPhone frames · 7 findings · 6 resolved 1 waived (47b) */
 /* Hallmark · finish-review: subagent, third round on the two-screen clip the owner asked for · 7 findings · 7 resolved (caption-free poster, the phone taps before CarPlay changes, whole frames without blending so the edge glow and the numbers stay true, labels off the control strip, the play button below the frame, the lead kept whole) */
 /* Hallmark · waive 47b · three phone frames around real iPhone screenshots in the install steps · the owner asked for iPhone frames to show each step on the phone */
-@import url("./tokens.css");
-@import url("./base.css");
+@import url("../assets/tokens.css");
+@import url("../assets/base.css");
 
 body { font-weight: 500; }
 h1, h2, h3 { color: var(--color-ink); }

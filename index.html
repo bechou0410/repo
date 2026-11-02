@@ -3,64 +3,72 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>repo.bechou.dev · tweak của bechou</title>
+<title>repo.bechou.dev: tweak của bechou</title>
 <meta name="description" content="Nguồn APT cho iPhone đã jailbreak (rootless, iOS 15 đến 26): các tweak của bechou, bắt đầu với Lề.">
-<meta name="theme-color" content="#121315">
+<meta name="theme-color" content="#111317">
 <meta property="og:title" content="repo.bechou.dev">
 <meta property="og:description" content="Tweak của bechou cho iPhone đã jailbreak rootless.">
-<meta property="og:image" content="https://repo.bechou.dev/le-traffic/media/og.jpg">
+<meta property="og:image" content="https://repo.bechou.dev/assets/og.jpg">
+<meta property="og:url" content="https://repo.bechou.dev/">
 <link rel="icon" href="assets/repo-favicon.png">
 <link rel="apple-touch-icon" href="CydiaIcon.png">
-<link rel="stylesheet" href="assets/site.css">
+<link rel="preload" href="assets/fonts/Saira-SemiBold.ttf" as="font" type="font/ttf" crossorigin>
 <link rel="stylesheet" href="assets/home.css">
 <script>document.documentElement.classList.add('js')</script>
 </head>
-<body>
+<body class="home">
+<a class="skip" href="#goi">Bỏ qua tới danh sách gói</a>
 
-<header class="home-hero">
-  <nav class="nav" aria-label="Chính">
+<header class="top">
+  <div class="container">
     <a class="wordmark" href="./"><img src="assets/repo-icon.png" alt="" width="32" height="32">bechou</a>
-    <div class="nav__links">
-      <a href="#goi">Gói</a>
-      <a href="le-traffic/">Lề</a>
-    </div>
-    <a class="button" data-add-source href="sileo://source/https://repo.bechou.dev/">Thêm vào Sileo</a>
-  </nav>
-  <div class="home-hero__words grid">
-    <h1 class="home-hero__title">repo.bechou.dev</h1>
-    <p class="home-hero__lead" data-rise style="--i:1">Nguồn APT cho iPhone đã jailbreak rootless, iOS 15 đến 26: các tweak của bechou.</p>
-    <div class="home-hero__source" data-ui data-rise style="--i:2">
-      <span class="home-hero__url" id="source-url">https://repo.bechou.dev/</span>
-      <button class="button button--quiet" type="button" data-copy="https://repo.bechou.dev/" aria-describedby="source-url">Sao chép</button>
-    </div>
-    <p class="home-hero__ways" data-rise style="--i:3">Mở bằng <a class="link" data-add-source href="sileo://source/https://repo.bechou.dev/">Sileo</a> hoặc <a class="link" href="zbra://sources/add/https://repo.bechou.dev/">Zebra</a>, hoặc dán địa chỉ vào trình quản lý gói bạn dùng.</p>
   </div>
 </header>
 
 <main>
-  <section class="package grid" id="goi" aria-labelledby="goi-title">
-    <h2 class="package__title" id="goi-title" data-rise>Lề, liếc là biết.</h2>
-    <a class="package__picture" href="le-traffic/" data-rise style="--i:1">
-      <img src="le-traffic/media/header.jpg" width="1500" height="500" alt="CarPlay thật với Lề cạnh Google Maps: 36 km/h ở đường giới hạn 40, làn phía trước, cấm vượt hiệu lực, camera và biển 70 phía trước.">
-    </a>
-    <div class="package__text" data-rise style="--i:2">
-      <p>Tốc độ, biển giới hạn, biển báo và làn đường trên CarPlay, từ VietMap Live, GOFA hoặc Waze: một bubble nổi trên mọi màn hình và một thẻ trong Google Maps.</p>
-      <p class="package__meta">dev.bechou.le · 0.2.1 · 1,8 MB</p>
-      <a class="button" href="le-traffic/">Xem Lề</a>
+  <section class="source container" aria-labelledby="source-title">
+    <h1 id="source-title">repo.bechou.dev</h1>
+    <p class="lead">Tweak của bechou cho iPhone jailbreak rootless, iOS 15 đến 26.</p>
+    <div class="address" id="nguon">
+      <div class="address__url">
+        <code id="source-url">https://repo.bechou.dev/</code>
+        <button class="btn btn--quiet" type="button" data-copy="https://repo.bechou.dev/" aria-describedby="source-url">Sao chép</button>
+      </div>
+      <div class="address__add">
+        <a class="btn" data-add-source href="sileo://source/https://repo.bechou.dev/">Thêm vào Sileo</a>
+        <a class="btn btn--quiet" data-add-source href="zbra://sources/add/https://repo.bechou.dev/">Thêm vào Zebra</a>
+      </div>
     </div>
-    <ul class="package__tiles">
-      <li data-rise style="--i:0"><img src="le-traffic/media/shot-goc.jpg" width="800" height="480" loading="lazy" alt="CarPlay thật với bubble của Lề, góc"><span>Góc</span></li>
-      <li data-rise style="--i:1"><img src="le-traffic/media/shot-le-dung.jpg" width="800" height="480" loading="lazy" alt="CarPlay thật với bubble của Lề, lề đứng"><span>Lề đứng</span></li>
-      <li data-rise style="--i:2"><img src="le-traffic/media/shot-le-ngang.jpg" width="800" height="480" loading="lazy" alt="CarPlay thật với bubble của Lề, lề ngang"><span>Lề ngang</span></li>
-      <li data-rise style="--i:3"><img src="le-traffic/media/shot-tran.jpg" width="800" height="480" loading="lazy" alt="CarPlay thật với bubble của Lề, chất liệu trần"><span>Trần</span></li>
+  </section>
+
+  <section class="packages container" id="goi" aria-labelledby="goi-title">
+    <div class="packages__head">
+      <h2 id="goi-title">Gói</h2>
+      <p class="packages__count">1 gói</p>
+    </div>
+    <ul class="pkg-list">
+      <li class="pkg">
+        <a class="pkg__link" href="le-traffic/">
+          <img class="pkg__icon" src="le-traffic/media/icon.png" alt="" width="64" height="64">
+          <div class="pkg__text">
+            <h3 class="pkg__name">Lề</h3>
+            <p class="pkg__line">Tốc độ, biển và làn đường nổi trên CarPlay, từ VietMap Live, GOFA hoặc Waze.</p>
+            <ul class="pkg__meta">
+              <li>dev.bechou.le 0.2.1</li>
+              <li>iOS 15 đến 26</li>
+              <li>1,8 MB</li>
+            </ul>
+          </div>
+          <img class="pkg__shot" src="le-traffic/media/shot-goc.jpg" width="800" height="480" loading="lazy" alt="CarPlay thật với Lề cạnh Google Maps: 36 km/h ở đường 70, cấm vượt hiệu lực, camera và biển 50 phía trước.">
+        </a>
+      </li>
     </ul>
   </section>
 </main>
 
-<footer class="home-close">
-  <p class="home-close__name" data-rise>bechou</p>
-  <div class="home-close__legal">
-    <p>© 2026 bechou · Font Saira, SIL Open Font License.</p>
+<footer class="foot">
+  <div class="container">
+    <p>© 2026 bechou. Font Saira, SIL Open Font License.</p>
     <p>Các tweak ở đây là dự án độc lập, không liên kết với Apple, Google, VietMap, GOFA hay Waze.</p>
   </div>
 </footer>
@@ -72,17 +80,9 @@
     catch { button.textContent = 'Chọn và chép tay'; }
     setTimeout(() => { button.textContent = 'Sao chép'; }, 1800);
   }));
-  const parts = document.querySelectorAll('[data-rise]');
-  if ('IntersectionObserver' in window) {
-    const seen = new IntersectionObserver(entries => entries.forEach(entry => {
-      if (entry.isIntersecting) { entry.target.classList.add('is-in'); seen.unobserve(entry.target); }
-    }), { rootMargin: '0px 0px -8% 0px' });
-    parts.forEach(part => seen.observe(part));
-  } else parts.forEach(part => part.classList.add('is-in'));
-  if (matchMedia('(prefers-reduced-motion: reduce)').matches)
-    document.querySelectorAll('video[autoplay]').forEach(video => { video.removeAttribute('autoplay'); video.pause(); });
+  // Sileo and Zebra open their links only on an iPhone or iPad; elsewhere the link points at the address.
   const apple = /iPhone|iPad|iPod/.test(navigator.userAgent) || (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1);
-  if (!apple) document.querySelectorAll('[data-add-source]').forEach(link => { link.href = '#source-url'; });
+  if (!apple) document.querySelectorAll('[data-add-source]').forEach(link => { link.href = '#nguon'; });
 })();
 </script>
 </body>

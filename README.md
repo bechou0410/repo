@@ -6,9 +6,9 @@ The APT repository for bechou's tweaks (rootless, iOS 15 to 26), served by GitHu
 |---|---|
 | `Packages*`, `Release` | The index, built by `tools/build-index.py` from `pool/`. |
 | `pool/` | The packages. |
-| `index.html` | The repository's page: its address and its packages. |
+| `index.html` | The repository's page: its address, how to add it, and one row per package (`<li class="pkg">`; a new package is one more row). |
 | `le-traffic/` | Lề's page (the package's `Depiction`) and `depiction.json` (its `SileoDepiction`). |
-| `assets/` | The shared stylesheet, the Saira typeface (SIL OFL, `assets/fonts/OFL.txt`) and icons. |
+| `assets/` | What every page shares: `tokens.css` (colours, type, spacing) and `base.css`, the Saira typeface (SIL OFL, `assets/fonts/OFL.txt`), icons and the home's `home.css` and share image. |
 
 ## Publish a package
 
@@ -19,4 +19,4 @@ The APT repository for bechou's tweaks (rootless, iOS 15 to 26), served by GitHu
 
 ## Lề's pictures
 
-The layout and material photos (`le-traffic/media/shot-*.png`) are real CarPlay screens, captured on the iPhone at 800 × 480 while VietMap Live ran a simulated route. The other pictures are drawn by Lề's own code (the bubble view and its road-sign painter, built for Mac Catalyst): `tools/render-media.sh <path to the Lề repository>` draws them again into `le-traffic/media/` (it needs Xcode and ffmpeg with libx264 and libsvtav1).
+Every CarPlay picture and recording on Lề's page is a capture from the iPhone, taken while VietMap Live ran a simulated route: the stills and the hero loop at 800 × 480, the intro clip from the CarPlay Simulator window beside Settings › Lề. The iPhone screens in the install steps are screenshots of the phone. The sign search's pictures are drawn by Lề's own road-sign painter: `tools/render-media.sh <path to the Lề repository>` draws them again into `le-traffic/media/signs/` (it needs Xcode).
