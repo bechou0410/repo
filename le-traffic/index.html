@@ -3,274 +3,262 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Lề · tốc độ và biển báo trên CarPlay</title>
-<meta name="description" content="Lề là tweak cho iPhone đã jailbreak (rootless): tốc độ, biển giới hạn, biển báo và làn đường nổi ở lề màn hình CarPlay và trong Google Maps, lấy từ VietMap Live, GOFA hoặc Waze.">
-<meta name="theme-color" content="#121315">
-<meta property="og:title" content="Lề · liếc là biết">
-<meta property="og:description" content="Tốc độ, giới hạn, biển báo và làn đường ở lề màn hình CarPlay.">
-<meta property="og:image" content="https://repo.bechou.dev/le-traffic/media/og.png">
+<title>Lề: tốc độ và biển báo trên CarPlay</title>
+<meta name="description" content="Lề là tweak cho iPhone đã jailbreak (rootless): tốc độ, biển giới hạn, biển báo và làn đường nổi trên CarPlay và trong Google Maps, lấy từ VietMap Live, GOFA hoặc Waze.">
+<meta name="theme-color" content="#16181c">
+<meta property="og:title" content="Lề: liếc là biết">
+<meta property="og:description" content="Tốc độ, giới hạn, biển báo và làn đường nổi trên CarPlay.">
+<meta property="og:image" content="https://repo.bechou.dev/le-traffic/media/og.jpg">
 <meta property="og:url" content="https://repo.bechou.dev/le-traffic/">
 <link rel="icon" href="../assets/favicon.png">
 <link rel="apple-touch-icon" href="media/icon.png">
 <link rel="preload" href="../assets/fonts/Saira-SemiBold.ttf" as="font" type="font/ttf" crossorigin>
-<link rel="stylesheet" href="../assets/site.css">
 <link rel="stylesheet" href="le.css">
 <script>document.documentElement.classList.add('js')</script>
 </head>
 <body>
+<a class="skip" href="#main">Bỏ qua tới nội dung</a>
 
-<header class="hero">
-  <nav class="nav" aria-label="Chính">
+<header class="nav">
+  <div class="container">
     <a class="wordmark" href="./"><img src="media/icon.png" alt="" width="32" height="32">Lề</a>
-    <div class="nav__links">
+    <nav class="nav__links" aria-label="Chính">
+      <a href="#bo-cuc">Bố cục</a>
       <a href="#bien">Biển báo</a>
       <a href="#cai">Cài đặt</a>
       <a href="#hoi">Hỏi đáp</a>
-    </div>
-    <a class="button" data-add-source href="sileo://source/https://repo.bechou.dev/">Thêm vào Sileo</a>
-  </nav>
-
-  <figure class="hero__picture" aria-hidden="false">
-    <img src="media/hero.png" width="2880" height="1620"
-         alt="Bubble của Lề, bố cục Lề đứng, trên bản đồ CarPlay ban đêm: 47 km/h ở đường giới hạn 50, làn đường 250 m phía trước, rồi biển cấm vượt đang hiệu lực, camera đèn đỏ ở 80 m và biển 60 ở 150 m.">
-  </figure>
-
-  <div class="hero__words">
-    <h1 class="hero__title">
-      <span class="hero__line"><span>Liếc</span></span>
-      <span class="hero__line"><span class="slot" data-ui role="img" aria-label="biển"><video poster="media/signs-loop.png" width="840" height="240" muted autoplay loop playsinline preload="auto" aria-hidden="true"><source src="media/signs-loop.mp4" type="video/mp4"><source src="media/signs-loop.webm" type="video/webm"></video></span><span>là biết.</span></span>
-    </h1>
-    <p class="hero__horizon">
-      <span class="hero__half hero__half--left">Lề đưa tốc độ, giới hạn, biển báo và làn đường</span>
-      <span class="hero__half hero__half--right">lên lề màn hình CarPlay.</span>
-    </p>
+    </nav>
+    <a class="btn btn--quiet" data-add-source href="sileo://source/https://repo.bechou.dev/">Thêm vào Sileo</a>
   </div>
-  <a class="button hero__cta" data-add-source href="sileo://source/https://repo.bechou.dev/">Thêm vào Sileo</a>
 </header>
 
-<main>
+<main id="main">
 
-  <section class="signs grid" id="bien" aria-labelledby="bien-title">
-    <h2 class="signs__title" id="bien-title" data-rise><label for="sign-query">Gõ tên một biển báo</label></h2>
-    <div class="signs__field" data-ui data-rise style="--i:1">
-      <input id="sign-query" class="signs__input" type="text" value="cấm vượt" autocomplete="off" spellcheck="false" aria-describedby="sign-hint">
-    </div>
-    <p id="sign-hint" class="sr">Tên biển hoặc một con số tốc độ; Lề vẽ biển tương ứng bên dưới.</p>
-    <div class="signs__answer" role="status" data-ui data-rise style="--i:2">
-      <img class="signs__sign" src="media/signs/no_passing_in.png" width="240" height="240" alt="Biển cấm vượt do Lề vẽ">
-      <div class="signs__text">
-        <p class="signs__name">Cấm vượt</p>
-        <p class="signs__rule">Khi xe đã vào đoạn có biển, Lề ghi “hiệu lực” thay cho khoảng cách.</p>
+  <section class="hero" aria-labelledby="hero-title">
+    <div class="container hero__grid">
+      <div class="hero__text">
+        <h1 id="hero-title" class="hero__title">Liếc là biết.</h1>
+        <p class="lead" style="--i:1">Tốc độ, biển và làn đường nổi trên CarPlay, cho iPhone jailbreak.</p>
+        <div class="hero__actions" style="--i:2">
+          <a class="btn" data-add-source href="sileo://source/https://repo.bechou.dev/">Thêm vào Sileo</a>
+          <a class="btn btn--quiet" data-add-source href="zbra://sources/add/https://repo.bechou.dev/">Thêm vào Zebra</a>
+        </div>
       </div>
-    </div>
-    <div class="signs__set" role="group" aria-label="Mọi biển Lề vẽ" data-rise style="--i:3"></div>
-    <div class="signs__examples" data-rise style="--i:3">
-      <span class="signs__try">Thử</span>
-      <button type="button" data-example="80">80</button>
-      <button type="button" data-example="camera phạt nguội">camera phạt nguội</button>
-      <button type="button" data-example="cấm quay đầu">cấm quay đầu</button>
-      <button type="button" data-example="trạm thu phí">trạm thu phí</button>
-    </div>
-    <p class="signs__note" data-rise style="--i:4">Lề tự vẽ 32 biển theo QCVN 41 và biển giới hạn với bất kỳ con số nào, cùng mũi tên làn và biểu tượng cảnh báo Waze. Gói cài không chứa hình của ứng dụng nào khác.</p>
-  </section>
-
-  <section class="bands" aria-labelledby="bands-title">
-    <div class="band" data-on="true" style="--field: var(--paint); --field-ink: var(--paint-ink)">
-      <div class="band__inner grid">
-        <h2 class="band__sentence" id="bands-title">Bubble nổi trên mọi màn hình CarPlay.</h2>
-        <p class="band__more" id="band-1">Kéo tới bốn góc; các mảnh tự lật theo mép, và Lề nhớ chỗ bạn đặt.</p>
-        <button class="switch" type="button" role="switch" aria-checked="true" aria-describedby="band-1" data-ui><span class="sr">Bubble nổi</span></button>
-      </div>
-    </div>
-    <div class="band" data-on="false" style="--field: var(--red); --field-ink: var(--red-ink)">
-      <div class="band__inner grid">
-        <p class="band__sentence">Một thẻ riêng ngay trong Google Maps.</p>
-        <p class="band__more" id="band-2">Trên bản đồ toàn màn hình, trong ô Dashboard của CarPlay và cả trên iPhone.</p>
-        <button class="switch" type="button" role="switch" aria-checked="false" aria-describedby="band-2" data-ui><span class="sr">Thẻ Google Maps</span></button>
-      </div>
-    </div>
-    <div class="band" data-on="true" style="--field: var(--amber); --field-ink: var(--amber-ink)">
-      <div class="band__inner grid">
-        <p class="band__sentence">Vượt tốc độ là thấy ngay.</p>
-        <p class="band__more" id="band-3">Số chuyển đỏ kèm “+25”; gần chạm giới hạn thì vàng; mép màn hình nhấp nháy nếu bạn bật.</p>
-        <button class="switch" type="button" role="switch" aria-checked="true" aria-describedby="band-3" data-ui><span class="sr">Cảnh báo vượt tốc độ</span></button>
-      </div>
-    </div>
-    <div class="band" data-on="false" style="--field: var(--blue); --field-ink: var(--blue-ink)">
-      <div class="band__inner grid">
-        <p class="band__sentence">Ứng dụng nguồn tự được đánh thức.</p>
-        <p class="band__more" id="band-4">Lề giữ VietMap Live, GOFA hoặc Waze chạy nền khi bubble hay thẻ đang hiện.</p>
-        <button class="switch" type="button" role="switch" aria-checked="false" aria-describedby="band-4" data-ui><span class="sr">Đánh thức ứng dụng nguồn</span></button>
-      </div>
+      <figure class="screen hero__screen" data-loop data-kind="product">
+        <video muted loop playsinline preload="metadata" poster="media/drive-loop.jpg" width="1600" height="960"
+               aria-label="CarPlay thật: bubble của Lề cạnh Google Maps, 36 km/h ở đường giới hạn 40, làn phía trước, biển cấm vượt đang hiệu lực, camera và biển 70 phía trước.">
+          <source src="media/drive-loop.webm" type='video/webm; codecs="av01.0.08M.08"'>
+          <source src="media/drive-loop.mp4" type='video/mp4; codecs="avc1.640028"'>
+        </video>
+        <button class="btn btn--quiet loop-toggle" type="button" data-loop-toggle>Dừng</button>
+      </figure>
     </div>
   </section>
 
-  <section class="gallery" id="bo-cuc" aria-labelledby="bo-cuc-title">
-    <h2 class="gallery__title" id="bo-cuc-title" data-rise>Bốn bố cục, năm chất liệu</h2>
-    <ul class="gallery__grid">
-      <li class="tile" data-rise style="--i:0">
-        <img src="media/shot-goc.png" width="800" height="480" loading="lazy" alt="CarPlay thật với Lề, bố cục Góc trên chất liệu Nhựa: 36 km/h ở đường 40, làn phía trước, cấm vượt hiệu lực, camera 180 m và biển 70 ở 200 m.">
-        <div class="tile__strip">
-          <p class="tile__values"><span>36 km/h</span><span>giới hạn 40</span><span>làn</span><span>3 biển</span></p>
-          <p class="tile__meta"><span>VietMap Live</span><span>Nhựa</span></p>
-          <p class="tile__name">Góc</p>
+  <section class="section" id="bo-cuc" aria-labelledby="bo-cuc-title">
+    <div class="container picker">
+      <div>
+        <div class="head">
+          <h2 id="bo-cuc-title">Đặt bubble theo cách bạn liếc</h2>
+          <p class="lead">Bốn bố cục, năm chất liệu, chụp trên CarPlay thật.</p>
         </div>
-      </li>
-      <li class="tile" data-rise style="--i:1">
-        <img src="media/shot-gon.png" width="800" height="480" loading="lazy" alt="CarPlay thật với Lề, bố cục Gọn: 36 km/h ở đường 40 và camera gần nhất ở 120 m.">
-        <div class="tile__strip">
-          <p class="tile__values"><span>36 km/h</span><span>giới hạn 40</span><span>biển gần nhất</span></p>
-          <p class="tile__meta"><span>VietMap Live</span><span>Nhựa</span></p>
-          <p class="tile__name">Gọn</p>
+        <fieldset class="seg">
+          <legend>Bố cục</legend>
+          <div class="seg__row">
+            <label><input type="radio" name="shot" value="goc"><span>Góc</span></label>
+            <label><input type="radio" name="shot" value="le-dung"><span>Lề đứng</span></label>
+            <label><input type="radio" name="shot" value="le-ngang"><span>Lề ngang</span></label>
+            <label><input type="radio" name="shot" value="gon"><span>Gọn</span></label>
+          </div>
+        </fieldset>
+        <fieldset class="seg">
+          <legend>Chất liệu</legend>
+          <div class="seg__row">
+            <label><input type="radio" name="shot" value="nhua"><span>Nhựa</span></label>
+            <label><input type="radio" name="shot" value="son" checked><span>Sơn</span></label>
+            <label><input type="radio" name="shot" value="kinh"><span>Kính</span></label>
+            <label><input type="radio" name="shot" value="suong"><span>Sương</span></label>
+            <label><input type="radio" name="shot" value="tran"><span>Trần</span></label>
+          </div>
+        </fieldset>
+      </div>
+      <figure class="picker__panel">
+        <div class="screen">
+          <img data-shot="goc nhua" src="media/shot-goc.jpg" width="800" height="480" loading="lazy" alt="CarPlay thật với Lề, bố cục Góc, chất liệu Nhựa: 36 km/h ở đường 40, làn phía trước, cấm vượt hiệu lực, camera 180 m và biển 70 ở 200 m.">
+          <img data-shot="le-dung" src="media/shot-le-dung.jpg" width="800" height="480" loading="lazy" alt="CarPlay thật với Lề, bố cục Lề đứng: tốc độ và giới hạn trên cùng, ba biển xếp dọc theo mép phải.">
+          <img data-shot="le-ngang" src="media/shot-le-ngang.jpg" width="800" height="480" loading="lazy" alt="CarPlay thật với Lề, bố cục Lề ngang: ba biển xếp ngang theo mép trên, cạnh tốc độ và giới hạn.">
+          <img data-shot="gon" src="media/shot-gon.jpg" width="800" height="480" loading="lazy" alt="CarPlay thật với Lề, bố cục Gọn: 36 km/h ở đường 40 và camera gần nhất ở 120 m.">
+          <img data-shot="son" src="media/shot-son.jpg" width="800" height="480" alt="CarPlay thật với Lề, chất liệu Sơn: tốc độ trên tấm sáng, 36 km/h ở đường 70.">
+          <img data-shot="kinh" src="media/shot-kinh.jpg" width="800" height="480" loading="lazy" alt="CarPlay thật với Lề, chất liệu Kính: tấm trong, 43 km/h ở đường 70.">
+          <img data-shot="suong" src="media/shot-suong.jpg" width="800" height="480" loading="lazy" alt="CarPlay thật với Lề, chất liệu Sương: tấm mờ, 35 km/h ở đường 70.">
+          <img data-shot="tran" src="media/shot-tran.jpg" width="800" height="480" loading="lazy" alt="CarPlay thật với Lề, chất liệu Trần, khi vượt tốc độ: 56 km/h ở đường 50, số đỏ và +6.">
         </div>
-      </li>
-      <li class="tile" data-rise style="--i:0">
-        <img src="media/shot-le-dung.png" width="800" height="480" loading="lazy" alt="CarPlay thật với Lề, bố cục Lề đứng: tốc độ và giới hạn trên cùng, ba biển xếp dọc theo mép phải.">
-        <div class="tile__strip">
-          <p class="tile__values"><span>36 km/h</span><span>giới hạn 40</span><span>3 biển</span></p>
-          <p class="tile__meta"><span>VietMap Live</span><span>Nhựa</span></p>
-          <p class="tile__name">Lề đứng</p>
-        </div>
-      </li>
-      <li class="tile" data-rise style="--i:1">
-        <img src="media/shot-le-ngang.png" width="800" height="480" loading="lazy" alt="CarPlay thật với Lề, bố cục Lề ngang: ba biển xếp ngang theo mép trên, cạnh tốc độ và giới hạn.">
-        <div class="tile__strip">
-          <p class="tile__values"><span>36 km/h</span><span>giới hạn 40</span><span>3 biển</span></p>
-          <p class="tile__meta"><span>VietMap Live</span><span>Nhựa</span></p>
-          <p class="tile__name">Lề ngang</p>
-        </div>
-      </li>
-      <li class="tile" data-rise style="--i:0">
-        <img src="media/shot-son.png" width="800" height="480" loading="lazy" alt="CarPlay thật với Lề, chất liệu Sơn, nền đặc: 36 km/h ở đường 70.">
-        <div class="tile__strip">
-          <p class="tile__values"><span>36 km/h</span><span>giới hạn 70</span><span>bình thường</span></p>
-          <p class="tile__meta"><span>VietMap Live</span><span>Góc</span></p>
-          <p class="tile__name">Sơn</p>
-        </div>
-      </li>
-      <li class="tile" data-rise style="--i:1">
-        <img src="media/shot-kinh.png" width="800" height="480" loading="lazy" alt="CarPlay thật với Lề, chất liệu Kính, nền trong: 43 km/h ở đường 70.">
-        <div class="tile__strip">
-          <p class="tile__values"><span>43 km/h</span><span>giới hạn 70</span><span>bình thường</span></p>
-          <p class="tile__meta"><span>VietMap Live</span><span>Góc</span></p>
-          <p class="tile__name">Kính</p>
-        </div>
-      </li>
-      <li class="tile" data-rise style="--i:0">
-        <img src="media/shot-suong.png" width="800" height="480" loading="lazy" alt="CarPlay thật với Lề, chất liệu Sương, nền mờ: 35 km/h ở đường 70.">
-        <div class="tile__strip">
-          <p class="tile__values"><span>35 km/h</span><span>giới hạn 70</span><span>bình thường</span></p>
-          <p class="tile__meta"><span>VietMap Live</span><span>Góc</span></p>
-          <p class="tile__name">Sương</p>
-        </div>
-      </li>
-      <li class="tile" data-rise style="--i:1">
-        <img src="media/shot-tran.png" width="800" height="480" loading="lazy" alt="CarPlay thật với Lề, chất liệu Trần, không nền, khi vượt tốc độ: 56 km/h ở đường 50, số đỏ và “+6”.">
-        <div class="tile__strip">
-          <p class="tile__values"><span>56 km/h</span><span>giới hạn 50</span><span>vượt +6</span></p>
-          <p class="tile__meta"><span>VietMap Live</span><span>Góc</span></p>
-          <p class="tile__name">Trần</p>
-        </div>
-      </li>
-    </ul>
-    <p class="gallery__note" data-rise>Chụp trên CarPlay thật, với VietMap Live chạy một lộ trình giả lập trên Xa lộ Hà Nội. Bốn ảnh đầu dùng chất liệu thứ năm, Nhựa. Kéo bubble sang góc khác, các mảnh tự lật để bám hai mép của góc đó.</p>
+        <figcaption>
+          <span data-shot="goc"><b>Góc.</b> Tốc độ, giới hạn, làn và biển gom vào một góc; kéo tới góc nào, Lề nhớ chỗ đó.</span>
+          <span data-shot="le-dung"><b>Lề đứng.</b> Biển xếp dọc theo mép phải, tốc độ ở trên cùng.</span>
+          <span data-shot="le-ngang"><b>Lề ngang.</b> Biển xếp ngang theo mép trên, cạnh tốc độ.</span>
+          <span data-shot="gon"><b>Gọn.</b> Chỉ tốc độ, giới hạn và biển gần nhất.</span>
+          <span data-shot="nhua"><b>Nhựa.</b> Tấm sẫm như mặt đường, ở đây trên bố cục Góc.</span>
+          <span data-shot="son"><b>Sơn.</b> Tốc độ trên tấm sáng như vạch sơn, ở đây trên bố cục Góc.</span>
+          <span data-shot="kinh"><b>Kính.</b> Tấm trong, bản đồ hiện qua; bố cục Góc.</span>
+          <span data-shot="suong"><b>Sương.</b> Tấm mờ đục, chữ vẫn rõ; bố cục Góc.</span>
+          <span data-shot="tran"><b>Trần.</b> Không tấm, chỉ số và biển; bố cục Góc, đang vượt tốc độ.</span>
+        </figcaption>
+      </figure>
+    </div>
   </section>
 
-  <section class="sources grid" id="nguon" aria-labelledby="nguon-title">
-    <h2 class="sources__title" id="nguon-title" data-rise>Ba nguồn,<br>một cách hiển thị.</h2>
-    <figure class="sources__picture" data-rise style="--i:2">
-      <img src="media/card.png" width="1044" height="1305" loading="lazy"
-           alt="Thẻ của Lề trong ô Dashboard Google Maps trên CarPlay: 47 km/h ở đường 50, làn 260 m phía trước, cấm vượt hiệu lực, camera 80 m.">
-      <figcaption>Thẻ của Lề trong ô Dashboard của Google Maps.</figcaption>
-    </figure>
-    <p class="sources__word" aria-hidden="true">Chi tiết</p>
-    <table class="sources__table" data-rise style="--i:1">
-      <caption class="sr">Nguồn dữ liệu, yêu cầu và gói</caption>
-      <tbody>
-        <tr><th scope="row">Nguồn</th><td>VietMap Live</td><td>tốc độ, giới hạn, biển, làn</td></tr>
-        <tr><th scope="row">Nguồn</th><td>GOFA</td><td>tốc độ, giới hạn, biển, làn</td></tr>
-        <tr><th scope="row">Nguồn</th><td>Waze</td><td>tốc độ, giới hạn, cảnh báo</td></tr>
-        <tr class="group"><th scope="row">Cần</th><td>iOS</td><td>15 đến 26, rootless</td></tr>
-        <tr><th scope="row">Cần</th><td>CarPlay</td><td>có dây hoặc không dây</td></tr>
-        <tr><th scope="row">Cần</th><td>Google Maps</td><td>chỉ cho thẻ</td></tr>
-        <tr><th scope="row">Cần</th><td>Gói nền</td><td>mobilesubstrate, PreferenceLoader</td></tr>
-        <tr class="group"><th scope="row">Gói</th><td>dev.bechou.le</td><td>0.2.1 · 1,8 MB</td></tr>
-        <tr><th scope="row">Gói</th><td>Xung đột</td><td>GMapHUD</td></tr>
-        <tr><th scope="row">Gói</th><td>Tải thẳng</td><td><a class="link" href="../pool/dev.bechou.le_0.2.1_iphoneos-arm64.deb" download>tệp .deb</a></td></tr>
-      </tbody>
-    </table>
+  <section class="section" id="luc-lai" aria-labelledby="luc-lai-title">
+    <div class="container">
+      <div class="head"><h2 id="luc-lai-title">Lề đổi theo từng đoạn đường</h2></div>
+      <div class="pinned">
+        <div>
+          <article class="moment" data-moment="drive">
+            <h3>Biển đang hiệu lực đứng đầu</h3>
+            <p>Biển đang áp dụng ghi “hiệu lực”; biển phía trước đếm từng mét.</p>
+            <div class="screen"><img src="media/shot-signs.jpg" width="800" height="480" loading="lazy" alt="CarPlay thật, bố cục Lề ngang: 35 km/h ở đường 70, cấm vượt hiệu lực sát tốc độ, camera 110 m và biển 50 ở 260 m."></div>
+          </article>
+          <article class="moment" data-moment="over">
+            <h3>Vượt tốc độ là thấy ngay</h3>
+            <p>Gần chạm giới hạn thì số vàng, vượt thì đỏ kèm mức vượt; mép màn hình nhấp nháy nếu bạn bật.</p>
+            <div class="screen"><img src="media/shot-over.jpg" width="800" height="480" loading="lazy" alt="CarPlay thật: 64 km/h ở đường 50, số đỏ kèm +14, mép màn hình viền đỏ, làn rẽ phải 380 m phía trước."></div>
+          </article>
+          <article class="moment" data-moment="card">
+            <h3>Thẻ riêng trong Google Maps</h3>
+            <p>Trên bản đồ, ô Dashboard của CarPlay và trên iPhone.</p>
+            <div class="screen"><img src="media/shot-card.jpg" width="800" height="480" loading="lazy" alt="CarPlay thật: thẻ của Lề trong Google Maps với tốc độ, giới hạn, làn và biển."></div>
+          </article>
+        </div>
+        <div class="pinned__frame" aria-hidden="true">
+          <div class="screen">
+            <img class="is-on" data-moment="drive" src="media/shot-signs.jpg" width="800" height="480" loading="lazy" alt="">
+            <img data-moment="over" src="media/shot-over.jpg" width="800" height="480" loading="lazy" alt="">
+            <img data-moment="card" src="media/shot-card.jpg" width="800" height="480" loading="lazy" alt="">
+          </div>
+        </div>
+      </div>
+    </div>
   </section>
 
-  <section class="steps grid" id="cai" aria-labelledby="cai-title">
-    <ol class="steps__list">
-      <li class="steps__step" data-rise>
-        <h2 class="steps__line" id="cai-title">Trước tiên, thêm nguồn.</h2>
-        <p>Trong Sileo hoặc Zebra, thêm <span class="steps__url">https://repo.bechou.dev/</span>.</p>
-      </li>
-      <li class="steps__step" data-rise>
-        <p class="steps__line">Rồi cài Lề, respring.</p>
-        <p>Sileo cài kèm mobilesubstrate và PreferenceLoader nếu máy chưa có.</p>
-      </li>
-      <li class="steps__step" data-rise>
-        <p class="steps__line">Sau đó chọn nguồn.</p>
-        <p>Cài đặt › Lề: VietMap Live, GOFA hoặc Waze, rồi bố cục và chất liệu của bubble.</p>
-      </li>
-      <li class="steps__step" data-rise>
-        <p class="steps__line steps__line--last">Cuối cùng, cắm CarPlay.</p>
-        <p>Mở ứng dụng nguồn một lần; từ đó Lề tự đánh thức nó mỗi chuyến đi.</p>
-      </li>
-    </ol>
+  <section class="trailer" id="clip" aria-labelledby="clip-title">
+    <div class="container">
+      <div class="head">
+        <h2 id="clip-title">Một phút trên CarPlay thật</h2>
+        <p class="lead">Lộ trình giả lập trên Xa lộ Hà Nội, VietMap Live.</p>
+      </div>
+      <figure class="player" data-player>
+        <video controls playsinline preload="none" poster="media/le-intro.jpg" width="1280" height="720"
+               aria-label="Clip giới thiệu Lề, 68 giây, có chú thích chữ: các bố cục, chất liệu, vượt tốc độ và thẻ trong Google Maps trên CarPlay thật.">
+          <source src="media/le-intro.webm" type='video/webm; codecs="av01.0.05M.08"'>
+          <source src="media/le-intro.mp4" type='video/mp4; codecs="avc1.64001F"'>
+        </video>
+        <button class="btn btn--quiet player__play" type="button" data-play hidden><svg viewBox="0 0 16 16" width="16" height="16" aria-hidden="true"><path d="M4 2.5v11l9.5-5.5z" fill="currentColor"/></svg>Xem clip, 1 phút</button>
+      </figure>
+    </div>
   </section>
 
-  <section class="faq grid" id="hoi" aria-labelledby="hoi-title">
-    <h2 class="faq__title" id="hoi-title" data-rise>Hỏi đáp</h2>
-    <dl class="faq__list">
-      <div class="faq__row" data-rise>
-        <dt>Có phải để ứng dụng nguồn trên màn hình?</dt>
-        <dd>Không. Khi bubble hoặc thẻ đang hiện, Lề giữ ứng dụng nguồn chạy nền (công tắc đánh thức trong Cài đặt › Lề). VietMap Live có thể nằm trên màn hình CarPlay cùng lúc.</dd>
+  <section class="section" id="bien" aria-labelledby="bien-title">
+    <div class="container">
+      <div class="signs">
+        <div>
+          <div class="head">
+            <h2 id="bien-title">Biển do Lề tự vẽ</h2>
+            <p class="lead">32 biển theo QCVN 41, và biển giới hạn với mọi con số.</p>
+          </div>
+          <div class="signs__field">
+            <label for="sign-query">Tên biển hoặc con số</label>
+            <input id="sign-query" class="signs__input" type="text" value="cấm vượt" autocomplete="off" spellcheck="false">
+          </div>
+          <div class="signs__examples" role="group" aria-label="Ví dụ">
+            <button type="button" data-example="80">80</button>
+            <button type="button" data-example="camera phạt nguội">camera phạt nguội</button>
+            <button type="button" data-example="cấm quay đầu">cấm quay đầu</button>
+            <button type="button" data-example="trạm thu phí">trạm thu phí</button>
+          </div>
+        </div>
+        <div class="signs__answer" role="status">
+          <img class="signs__sign" src="media/signs/no_passing_in.png" width="240" height="240" alt="Biển cấm vượt do Lề vẽ">
+          <p class="signs__name">Cấm vượt</p>
+          <p class="signs__rule">Khi xe đã vào đoạn có biển, Lề ghi “hiệu lực” thay cho khoảng cách.</p>
+        </div>
       </div>
-      <div class="faq__row" data-rise>
-        <dt>Lề có thay được đồng hồ của xe?</dt>
-        <dd>Không. Số liệu có thể thiếu, trễ hoặc sai. Biển báo thật, đồng hồ xe và luật giao thông luôn đúng hơn. Chỉ chỉnh Lề khi xe đã đỗ.</dd>
+      <div class="rail signs__set" role="group" aria-label="Mọi biển Lề vẽ"></div>
+    </div>
+  </section>
+
+  <section class="section" id="cai" aria-labelledby="cai-title">
+    <div class="container">
+      <div class="head"><h2 id="cai-title">Từ Sileo tới CarPlay</h2></div>
+      <div class="install">
+        <ol class="steps">
+          <li><div><h3>Thêm nguồn</h3><p>Trong Sileo hoặc Zebra, thêm <span class="url">https://repo.bechou.dev/</span></p></div></li>
+          <li><div><h3>Cài Lề, rồi respring</h3><p>Sileo tự cài kèm mobilesubstrate và PreferenceLoader.</p></div></li>
+          <li><div><h3>Chọn nguồn</h3><p>Trong Cài đặt › Lề.</p></div></li>
+          <li><div><h3>Cắm CarPlay</h3><p>Mở ứng dụng nguồn một lần; sau đó Lề tự đánh thức.</p></div></li>
+        </ol>
+        <dl class="facts">
+          <div><dt>Hệ máy</dt><dd>iOS 15 đến 26, rootless</dd></div>
+          <div><dt>Nguồn</dt><dd>VietMap Live và GOFA có làn; Waze thì không</dd></div>
+          <div><dt>CarPlay</dt><dd>Có dây hoặc không dây</dd></div>
+          <div><dt>Google Maps</dt><dd>Chỉ cần cho thẻ</dd></div>
+          <div><dt>Không chạy chung với</dt><dd>GMapHUD</dd></div>
+          <div><dt>Gói</dt><dd>dev.bechou.le 0.2.1, 1,8 MB</dd></div>
+          <div><dt>Tải thẳng</dt><dd><a class="link" href="../pool/dev.bechou.le_0.2.1_iphoneos-arm64.deb" download>Tệp .deb</a></dd></div>
+        </dl>
       </div>
-      <div class="faq__row" data-rise>
-        <dt>Vì sao Waze không có làn đường?</dt>
-        <dd>Waze không đưa ra bảng làn. VietMap Live và GOFA có; với Waze, Lề hiện tốc độ, giới hạn và các cảnh báo như camera, tai nạn, công an.</dd>
+    </div>
+  </section>
+
+  <section class="section" id="hoi" aria-labelledby="hoi-title">
+    <div class="container faq">
+      <h2 id="hoi-title">Hỏi đáp</h2>
+      <dl>
+        <div class="faq__row">
+          <dt>Có phải để ứng dụng nguồn trên màn hình?</dt>
+          <dd>Không. Khi bubble hoặc thẻ đang hiện, Lề giữ ứng dụng nguồn chạy nền.</dd>
+        </div>
+        <div class="faq__row">
+          <dt>Lề có thay được đồng hồ của xe?</dt>
+          <dd>Không. Số liệu có thể thiếu hoặc trễ; biển thật và đồng hồ xe luôn đúng hơn. Chỉ chỉnh Lề khi xe đã đỗ.</dd>
+        </div>
+        <div class="faq__row">
+          <dt>Số liệu cũ có còn hiện?</dt>
+          <dd>Mỗi số liệu hiện 5 giây từ lúc đo; hết hạn mà không có tin mới thì Lề ẩn nó.</dd>
+        </div>
+        <div class="faq__row">
+          <dt>Lề có gửi dữ liệu đi đâu?</dt>
+          <dd>Không. Số liệu chỉ đi từ ứng dụng nguồn tới CarPlay, ngay trên iPhone.</dd>
+        </div>
+      </dl>
+    </div>
+  </section>
+
+  <section class="close" aria-labelledby="close-title">
+    <div class="container">
+      <h2 id="close-title">Thêm repo, rồi cài Lề.</h2>
+      <div class="close__actions">
+        <a class="btn" data-add-source href="sileo://source/https://repo.bechou.dev/">Thêm vào Sileo</a>
+        <a class="btn btn--quiet" data-add-source href="zbra://sources/add/https://repo.bechou.dev/">Thêm vào Zebra</a>
       </div>
-      <div class="faq__row" data-rise>
-        <dt>Dùng chung với GMapHUD được không?</dt>
-        <dd>Không. Hai tweak dùng những lớp cùng tên trong Google Maps, nên gói Lề khai báo xung đột với GMapHUD.</dd>
-      </div>
-      <div class="faq__row" data-rise>
-        <dt>Lề có gửi dữ liệu đi đâu?</dt>
-        <dd>Không. Số liệu đi từ ứng dụng nguồn tới CarPlay ngay trên iPhone, qua một tiến trình chuyển tiếp của Lề. Không có máy chủ nào.</dd>
-      </div>
-      <div class="faq__row" data-rise>
-        <dt>Số liệu cũ có còn hiện?</dt>
-        <dd>Mỗi số liệu chỉ có hiệu lực 5 giây kể từ lúc đo. Hết hạn mà không có tin mới thì Lề ẩn nó, trừ khi nguồn vẫn đang báo về đoạn đường ấy hoặc xe đang đứng yên.</dd>
-      </div>
-    </dl>
+    </div>
   </section>
 
 </main>
 
-<footer class="close">
-  <div class="close__top grid">
-    <div class="close__invite">
-      <h2 class="close__title">Thêm repo,<br>rồi cài Lề.</h2>
-      <a class="button button--ink" data-add-source href="sileo://source/https://repo.bechou.dev/">Thêm vào Sileo</a>
+<footer class="foot">
+  <div class="container">
+    <p class="foot__mark" aria-hidden="true">Lề</p>
+    <div class="foot__row">
+      <ul class="foot__links">
+        <li><a class="link" href="https://repo.bechou.dev/">repo.bechou.dev</a></li>
+        <li><a class="link" href="../pool/dev.bechou.le_0.2.1_iphoneos-arm64.deb" download>Tải .deb</a></li>
+      </ul>
+      <div class="foot__legal">
+        <p>© 2026 bechou. Font Saira, SIL Open Font License.</p>
+        <p>VietMap Live, GOFA, Waze, Google Maps và CarPlay là thương hiệu của chủ sở hữu; Lề không liên kết với họ.</p>
+      </div>
     </div>
-    <ul class="close__links">
-      <li><a class="link" href="zbra://sources/add/https://repo.bechou.dev/">Thêm vào Zebra</a></li>
-      <li><a class="link" href="https://repo.bechou.dev/">repo.bechou.dev</a></li>
-      <li><a class="link" href="../pool/dev.bechou.le_0.2.1_iphoneos-arm64.deb" download>Tải .deb</a></li>
-    </ul>
   </div>
-  <div class="close__legal">
-    <p>© 2026 bechou · dev.bechou.le 0.2.1 · Font Saira, SIL Open Font License.</p>
-    <p>VietMap Live, GOFA, Waze, Google Maps và CarPlay là thương hiệu của chủ sở hữu; Lề không liên kết với họ.</p>
-  </div>
-  <p class="close__name" aria-hidden="true">Lề</p>
 </footer>
 
 <script src="le.js" defer></script>

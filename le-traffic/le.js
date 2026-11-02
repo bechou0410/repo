@@ -1,4 +1,4 @@
-// Lề's page: the sign search, the switches, the entrances and the add-source links.
+// Lề's page: the sign search, the hero's loop, the pinned frame and the add-source links.
 (() => {
   // Every sign Lề draws, as the sources name it, with what the bubble writes beside it. Regulatory signs
   // (limits, bans, orders, zones) read "hiệu lực" once the car is inside them; points count down to "0 m".
@@ -107,30 +107,45 @@
     }
   }
 
-  // Switches: a band fills with its colour and says what the setting does.
-  document.querySelectorAll('.switch').forEach(toggle => toggle.addEventListener('click', () => {
-    const on = toggle.getAttribute('aria-checked') !== 'true';
-    toggle.setAttribute('aria-checked', String(on));
-    toggle.closest('.band').dataset.on = String(on);
-  }));
+  // The hero's loop: still until it is on screen, paused on hover, focus, off screen and on request.
+  document.querySelectorAll('[data-loop]').forEach(figure => {
+    const button = figure.querySelector('[data-loop-toggle]');
+    const state = { seen: false, hover: false, focus: false, held: matchMedia('(prefers-reduced-motion: reduce)').matches };
+    const sync = () => {
+      const run = state.seen && !state.hover && !state.focus && !state.held;
+      figure.classList.toggle('is-running', run);
+      figure.querySelectorAll('video').forEach(video => (run ? video.play().catch(() => {}) : video.pause()));
+      if (button) button.textContent = state.held ? 'Chạy' : 'Dừng';
+    };
+    button?.addEventListener('click', () => { state.held = !state.held; sync(); });
+    [['pointerenter', 'hover', true], ['pointerleave', 'hover', false], ['focusin', 'focus', true], ['focusout', 'focus', false]]
+      .forEach(([type, key, value]) => figure.addEventListener(type, () => { state[key] = value; sync(); }));
+    if ('IntersectionObserver' in window) new IntersectionObserver(([entry]) => { state.seen = entry.isIntersecting; sync(); }).observe(figure);
+    else { state.seen = true; sync(); }
+  });
 
-  // Entrances: each section's parts rise once as it comes into view, in order.
-  const parts = document.querySelectorAll('[data-rise]');
-  if ('IntersectionObserver' in window) {
-    const seen = new IntersectionObserver(entries => entries.forEach(entry => {
-      if (entry.isIntersecting) { entry.target.classList.add('is-in'); seen.unobserve(entry.target); }
-    }), { rootMargin: '0px 0px -8% 0px' });
-    parts.forEach((part, i) => {
-      if (!part.style.getPropertyValue('--i')) part.style.setProperty('--i', String(Array.from(part.parentElement.children).indexOf(part) % 5));
-      seen.observe(part);
-    });
-  } else parts.forEach(part => part.classList.add('is-in'));
+  // The clip: one play button over its poster; the browser's own controls once it plays.
+  document.querySelectorAll('[data-player]').forEach(player => {
+    const video = player.querySelector('video'), button = player.querySelector('[data-play]');
+    if (!video || !button) return;
+    const start = () => { video.controls = true; button.hidden = true; };
+    video.controls = false; button.hidden = false;
+    button.addEventListener('click', () => { start(); video.play().catch(() => {}); video.focus(); });
+    video.addEventListener('play', start);
+  });
 
-  // The headline's signs stand still for readers who ask for less motion.
-  if (matchMedia('(prefers-reduced-motion: reduce)').matches)
-    document.querySelectorAll('video[autoplay]').forEach(video => { video.removeAttribute('autoplay'); video.pause(); });
+  // The pinned frame shows the moment in the middle of the screen.
+  const frame = document.querySelector('.pinned__frame');
+  if (frame && 'IntersectionObserver' in window) {
+    const pictures = frame.querySelectorAll('img[data-moment]');
+    const watch = new IntersectionObserver(entries => entries.forEach(entry => {
+      if (!entry.isIntersecting) return;
+      pictures.forEach(img => img.classList.toggle('is-on', img.dataset.moment === entry.target.dataset.moment));
+    }), { rootMargin: '-45% 0px -45% 0px' });
+    document.querySelectorAll('.moment[data-moment]').forEach(moment => watch.observe(moment));
+  }
 
-  // Sileo opens its link only on an iPhone or iPad; elsewhere the link goes to the instructions.
+  // Sileo and Zebra open their links only on an iPhone or iPad; elsewhere the link goes to the steps.
   const apple = /iPhone|iPad|iPod/.test(navigator.userAgent) || (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1);
   if (!apple) document.querySelectorAll('[data-add-source]').forEach(link => { link.href = '#cai'; });
 })();

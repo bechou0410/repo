@@ -1,7 +1,7 @@
 {
  "minVersion": "0.4",
  "class": "DepictionTabView",
- "headerImage": "https://repo.bechou.dev/le-traffic/media/header.png",
+ "headerImage": "https://repo.bechou.dev/le-traffic/media/header.jpg",
  "tintColor": "#E4362E",
  "tabs": [
   {
@@ -19,27 +19,31 @@
      "itemSize": "{240, 144}",
      "screenshots": [
       {
-       "url": "https://repo.bechou.dev/le-traffic/media/shot-goc.png",
+       "url": "https://repo.bechou.dev/le-traffic/media/shot-goc.jpg",
        "accessibilityText": "Bố cục Góc trên CarPlay"
       },
       {
-       "url": "https://repo.bechou.dev/le-traffic/media/shot-le-dung.png",
+       "url": "https://repo.bechou.dev/le-traffic/media/shot-le-dung.jpg",
        "accessibilityText": "Bố cục Lề đứng"
       },
       {
-       "url": "https://repo.bechou.dev/le-traffic/media/shot-le-ngang.png",
+       "url": "https://repo.bechou.dev/le-traffic/media/shot-le-ngang.jpg",
        "accessibilityText": "Bố cục Lề ngang"
       },
       {
-       "url": "https://repo.bechou.dev/le-traffic/media/shot-gon.png",
+       "url": "https://repo.bechou.dev/le-traffic/media/shot-gon.jpg",
        "accessibilityText": "Bố cục Gọn"
       },
       {
-       "url": "https://repo.bechou.dev/le-traffic/media/shot-tran.png",
+       "url": "https://repo.bechou.dev/le-traffic/media/shot-tran.jpg",
        "accessibilityText": "Chất liệu Trần khi vượt tốc độ"
       },
       {
-       "url": "https://repo.bechou.dev/le-traffic/media/card.png",
+       "url": "https://repo.bechou.dev/le-traffic/media/shot-over.jpg",
+       "accessibilityText": "Vượt tốc độ: số đỏ kèm +14, mép màn hình viền đỏ"
+      },
+      {
+       "url": "https://repo.bechou.dev/le-traffic/media/shot-card.jpg",
        "accessibilityText": "Thẻ trong Google Maps"
       }
      ]
