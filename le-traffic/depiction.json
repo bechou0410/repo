@@ -16,27 +16,27 @@
     {
      "class": "DepictionScreenshotsView",
      "itemCornerRadius": 10,
-     "itemSize": "{160, 200}",
+     "itemSize": "{240, 144}",
      "screenshots": [
       {
-       "url": "https://repo.bechou.dev/le-traffic/media/tile-goc.png",
-       "accessibilityText": "Bố cục Góc"
+       "url": "https://repo.bechou.dev/le-traffic/media/shot-goc.png",
+       "accessibilityText": "Bố cục Góc trên CarPlay"
       },
       {
-       "url": "https://repo.bechou.dev/le-traffic/media/tile-le-dung.png",
+       "url": "https://repo.bechou.dev/le-traffic/media/shot-le-dung.png",
        "accessibilityText": "Bố cục Lề đứng"
       },
       {
-       "url": "https://repo.bechou.dev/le-traffic/media/tile-le-ngang.png",
+       "url": "https://repo.bechou.dev/le-traffic/media/shot-le-ngang.png",
        "accessibilityText": "Bố cục Lề ngang"
       },
       {
-       "url": "https://repo.bechou.dev/le-traffic/media/tile-gon.png",
+       "url": "https://repo.bechou.dev/le-traffic/media/shot-gon.png",
        "accessibilityText": "Bố cục Gọn"
       },
       {
-       "url": "https://repo.bechou.dev/le-traffic/media/tile-tran.png",
-       "accessibilityText": "Chất liệu Trần, vượt tốc độ"
+       "url": "https://repo.bechou.dev/le-traffic/media/shot-tran.png",
+       "accessibilityText": "Chất liệu Trần khi vượt tốc độ"
       },
       {
        "url": "https://repo.bechou.dev/le-traffic/media/card.png",

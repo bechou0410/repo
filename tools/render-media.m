@@ -58,66 +58,6 @@ static void Hero(NSString *out) {
 }
 
 
-// A gallery tile: the bubble in the top-right corner of a CarPlay map, 4:5, all at one scale.
-static void DrawMap(CGSize area, BOOL day) {
-    [RGB(day?0xeef0f3:0x1f2836) setFill];UIRectFill(CGRectMake(0,0,area.width,area.height));
-    [RGB(day?0xe4e7eb:0x253041) setFill];
-    for(CGFloat x=-20;x<area.width;x+=88) for(CGFloat y=-30;y<area.height;y+=78) UIRectFill(CGRectMake(x+7,y+7,74,64));
-    [RGB(day?0xffffff:0x354153) setFill];
-    for(CGFloat x=-20;x<area.width;x+=88) UIRectFill(CGRectMake(x-4,0,8,area.height));
-    for(CGFloat y=-30;y<area.height;y+=78) UIRectFill(CGRectMake(0,y-4,area.width,8));
-    UIBezierPath *hwy=[UIBezierPath bezierPath];[hwy moveToPoint:CGPointMake(-20,area.height*.8)];
-    [hwy addCurveToPoint:CGPointMake(area.width+20,area.height*.42) controlPoint1:CGPointMake(area.width*.3,area.height*.72) controlPoint2:CGPointMake(area.width*.62,area.height*.4)];
-    hwy.lineWidth=13;[RGB(day?0xffd773:0x5f5948) setStroke];[hwy stroke];
-    UIBezierPath *route=[UIBezierPath bezierPath];[route moveToPoint:CGPointMake(area.width*.42,area.height)];
-    [route addLineToPoint:CGPointMake(area.width*.42,area.height*.62)];[route addLineToPoint:CGPointMake(area.width+20,area.height*.62)];
-    route.lineWidth=9;route.lineJoinStyle=kCGLineJoinRound;[RGB(day?0x1a73e8:0x5b9bff) setStroke];[route stroke];
-}
-static NSDictionary *Drive(double kph, double limit) {
-    NSArray *lanes=@[@[@"straight"],@[@"straight"],@[@"straight",@"right"],@[@"right"]];
-    NSMutableArray *items=[NSMutableArray array];
-    for(NSUInteger i=0;i<lanes.count;i++) [items addObject:@{@"directions":lanes[i],@"recommended":i<3?@YES:@NO}];
-    NSArray *road=@[Sign(@"no-passing",0,nil,@"no_passing_in"),Sign(@"camera",81,nil,@"traffic_camera"),Sign(@"speed-limit",146,@60,nil),Sign(@"restriction",420,nil,@"noLeftTurn")];
-    return @{@"speed":Group(@{@"currentSpeedMps":@(kph/3.6)}),@"limit":Group(@{@"speedLimitKph":@(limit)}),
-        @"lanes":Group(@{@"distanceMeters":@252,@"items":items}),@"alerts":Group(road)};
-}
-static UIImage *TileImage(NSString *arrangement, NSString *material, BOOL day, NSDictionary *groups);
-static void Tile(NSString *out, NSString *name, NSString *arrangement, NSString *material, BOOL day, NSDictionary *groups) {
-    Write(TileImage(arrangement,material,day,groups),[out stringByAppendingFormat:@"/tile-%@.png",name]);
-    printf("tile %s\n",name.UTF8String);
-}
-// The Góc tile as frames of a drive: 30 km/h up to 62 and back on a 50 road, so the speed goes from paint
-// to amber near the limit and to red with its excess. 15 frames a second, 8 seconds.
-static void SpeedFrames(NSString *out) {
-    NSString *frames=[out stringByAppendingPathComponent:@"frames"];
-    [NSFileManager.defaultManager createDirectoryAtPath:frames withIntermediateDirectories:YES attributes:nil error:nil];
-    for(int i=0;i<120;i++) {
-        double t=i/15.0,kph;
-        if(t<1) kph=30; else if(t<4) kph=30+32*(1-cos(M_PI*(t-1)/3))/2; else if(t<5.5) kph=62; else kph=62-32*(1-cos(M_PI*(t-5.5)/2.5))/2;
-        Write(TileImage(@"corner",@"asphalt",NO,Drive(round(kph),50)),[frames stringByAppendingFormat:@"/%03d.png",i]);
-    }
-    printf("speed frames 120\n");
-}
-static UIImage *TileImage(NSString *arrangement, NSString *material, BOOL day, NSDictionary *groups) {
-    NSMutableArray *modules=[NSMutableArray array];
-    for(NSString *module in CWTrafficBubbleModuleIDs()) [modules addObject:@{@"id":module,@"enabled":@YES}];
-    CWTrafficBubbleView *view=[[CWTrafficBubbleView alloc] initWithFrame:CGRectMake(0,0,240,200)];
-    view.overrideUserInterfaceStyle=day?UIUserInterfaceStyleLight:UIUserInterfaceStyleDark;
-    view.layoutConfig=@{@"schemaVersion":@1,@"arrangement":arrangement,@"modules":modules,@"background":material,@"backgroundOpacity":@.94};
-    [view displaySnapshot:@{@"groups":groups} source:@"vietmap-live"];
-    CGSize size=view.designSize;view.bounds=CGRectMake(0,0,size.width,size.height);
-    [view setNeedsLayout];[view layoutIfNeeded];
-    for(UIView *child in view.subviews) { child.layer.contentsScale=2;[child.layer setNeedsDisplay];[child.layer displayIfNeeded]; }
-    // Framed close round the bubble, 4:5, so each layout reads at the tile's size; 2 px a point.
-    CGFloat width=MAX(size.width+72,460);const CGSize area={width,round(width*1.25)};
-    UIGraphicsImageRendererFormat *format=[UIGraphicsImageRendererFormat preferredFormat];format.scale=2;format.opaque=YES;
-    return [[[UIGraphicsImageRenderer alloc] initWithSize:area format:format] imageWithActions:^(__unused UIGraphicsImageRendererContext *context) {
-        DrawMap(area,day);
-        CGContextRef c=UIGraphicsGetCurrentContext();CGContextSaveGState(c);
-        CGContextTranslateCTM(c,area.width-size.width,0);[view.layer renderInContext:c];CGContextRestoreGState(c);
-    }];
-}
-
 static UIImage *SignImage(NSString *name, CGFloat side, UIColor *ground) {
     UIGraphicsImageRendererFormat *format=[UIGraphicsImageRendererFormat preferredFormat];format.scale=2;format.opaque=ground!=nil;
     return [[[UIGraphicsImageRenderer alloc] initWithSize:CGSizeMake(side,side) format:format] imageWithActions:^(__unused UIGraphicsImageRendererContext *context) {
@@ -131,16 +71,6 @@ int main(int argc, char **argv) { @autoreleasepool {
     NSString *out=@(argv[1]),*signs=[out stringByAppendingPathComponent:@"signs"];
     [NSFileManager.defaultManager createDirectoryAtPath:signs withIntermediateDirectories:YES attributes:nil error:nil];
     Hero(out);
-    // The gallery: the four arrangements at night on Nhựa, then four materials by day.
-    Tile(out,@"goc",@"corner",@"asphalt",NO,Drive(47,50));
-    Tile(out,@"gon",@"compact",@"asphalt",NO,Drive(47,50));
-    Tile(out,@"le-dung",@"side",@"asphalt",NO,Drive(32,50));
-    Tile(out,@"le-ngang",@"strip",@"asphalt",NO,Drive(32,50));
-    Tile(out,@"son",@"corner",@"paint",YES,Drive(32,50));
-    Tile(out,@"kinh",@"corner",@"glass",YES,Drive(47,50));
-    Tile(out,@"suong",@"corner",@"haze",YES,Drive(32,50));
-    Tile(out,@"tran",@"corner",@"bare",YES,Drive(58,50));
-    SpeedFrames(out);
     // Every sign the search answers with, at 120 pt (240 px).
     NSMutableArray *names=[NSMutableArray array];
     for(NSString *name in CWRoadSignNames()) if(![name isEqual:@"khu_dan_cu"]) [names addObject:name];

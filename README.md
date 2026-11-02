@@ -19,4 +19,4 @@ The APT repository for bechou's tweaks (rootless, iOS 15 to 26), served by GitHu
 
 ## Lề's pictures
 
-Every picture on Lề's page is drawn by Lề's own code: the bubble view and its road-sign painter, built for Mac Catalyst. `tools/render-media.sh <path to the Lề repository>` draws them again into `le-traffic/media/` (it needs Xcode and ffmpeg with libx264 and libsvtav1).
+The layout and material photos (`le-traffic/media/shot-*.png`) are real CarPlay screens, captured on the iPhone at 800 × 480 while VietMap Live ran a simulated route. The other pictures are drawn by Lề's own code (the bubble view and its road-sign painter, built for Mac Catalyst): `tools/render-media.sh <path to the Lề repository>` draws them again into `le-traffic/media/` (it needs Xcode and ffmpeg with libx264 and libsvtav1).

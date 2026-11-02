@@ -15,10 +15,6 @@ xcrun --sdk macosx clang -target arm64-apple-ios15.0-macabi -isystem "$sdk/Syste
 media="$site/le-traffic/media"; mkdir -p "$media/signs"
 cp "$work"/signs/*.png "$media/signs/"
 cp "$work/hero.png" "$media/hero.png"
-cp "$work"/tile-*.png "$media/"
-# The Góc tile's drive, H.264 for most browsers and AV1 for builds without it.
-ffmpeg -v error -y -framerate 15 -i "$work/frames/%03d.png" -vf "fps=30,scale=-2:1100,format=yuv420p" -c:v libx264 -preset slow -crf 23 -movflags +faststart -an "$media/drive.mp4"
-ffmpeg -v error -y -framerate 15 -i "$work/frames/%03d.png" -vf "fps=30,scale=-2:1100,format=yuv420p" -c:v libsvtav1 -crf 40 -preset 8 -an "$media/drive.webm"
 # The loop: the strip panned left by one period (14 signs × 140 pt × 2 px) in 14 s, 30 fps, seamless.
 ffmpeg -v error -y -loop 1 -i "$work/strip.png" -vf "crop=840:240:'mod(t*280,3920)':0,format=yuv420p" -t 14 -r 30 \
  -c:v libx264 -preset slow -crf 22 -movflags +faststart -an "$media/signs-loop.mp4"
