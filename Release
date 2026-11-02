@@ -1,0 +1,23 @@
+Origin: bechou
+Label: bechou
+Suite: stable
+Version: 1.0
+Codename: ios
+Architectures: iphoneos-arm64
+Components: main
+Description: Tweak của bechou cho iPhone đã jailbreak (rootless).
+MD5Sum:
+ d1fea6bfa63b0c73473a9ea8fac9af7b 994 Packages
+ 0b5f24917629f0a84b39314681576b90 621 Packages.gz
+ ae429a2cc99e7a5d0c0f1d5a22380edb 699 Packages.bz2
+ 53541dff50996012910ff551d579ed08 668 Packages.xz
+SHA1:
+ 95372f3dc4f1e6ee339fe212a72fb5947e8f311f 994 Packages
+ 32deb86c9eecc2d1ace8b8d6bed08393b623f0c8 621 Packages.gz
+ 0270ac25a831550e8a637199d153bf9b3ebabfe0 699 Packages.bz2
+ dc6ba612bbed4d9769e44cd9501e2864c1d11d75 668 Packages.xz
+SHA256:
+ 9142c5304dbec2047cf8f8fb522df4acd5c26b9f6a51be7caace357092d17dea 994 Packages
+ 7ee78ed95bc926c30e4025c09f7dd800dad0e873a3feb9314773ec642a5c6d1a 621 Packages.gz
+ 1542a32836c84ace945e64011dc016ca563b2cd4e38cc110ee1e7d11d3419448 699 Packages.bz2
+ c2dbd6c72a29e7c1e0e4fd07a8f5677f5fe756a938ff0b2331e2e96c7959bd05 668 Packages.xz
