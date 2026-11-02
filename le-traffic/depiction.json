@@ -50,7 +50,7 @@
     {
      "class": "DepictionTableTextView",
      "title": "Phiên bản",
-     "text": "0.2.0"
+     "text": "0.2.1"
     },
     {
      "class": "DepictionTableTextView",
@@ -79,6 +79,17 @@
    "tabname": "Thay đổi",
    "class": "DepictionStackView",
    "views": [
+    {
+     "class": "DepictionSubheaderView",
+     "title": "0.2.1",
+     "useBoldText": true,
+     "useBottomMargin": false
+    },
+    {
+     "class": "DepictionMarkdownView",
+     "markdown": "- Mũi tên trên biển cấm và biển hiệu lệnh vẽ cùng một nét: cùng độ dày, cùng độ vươn tay rẽ, cùng cỡ đầu mũi tên.",
+     "useSpacing": true
+    },
     {
      "class": "DepictionSubheaderView",
      "title": "0.2.0",

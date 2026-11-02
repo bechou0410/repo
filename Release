@@ -7,17 +7,17 @@ Architectures: iphoneos-arm64
 Components: main
 Description: Tweak của bechou cho iPhone đã jailbreak (rootless).
 MD5Sum:
- d1fea6bfa63b0c73473a9ea8fac9af7b 994 Packages
- 0b5f24917629f0a84b39314681576b90 621 Packages.gz
- ae429a2cc99e7a5d0c0f1d5a22380edb 699 Packages.bz2
- 53541dff50996012910ff551d579ed08 668 Packages.xz
+ 437d0ec9d91ac732fd364000e6b31116 994 Packages
+ 3c0a52ba41487dbb4da9792a483f6e43 618 Packages.gz
+ ce4d24c95803dc8d5e79dfd68709dbb6 703 Packages.bz2
+ 02a5947447f4ef39ad0545ff42bcdbac 672 Packages.xz
 SHA1:
- 95372f3dc4f1e6ee339fe212a72fb5947e8f311f 994 Packages
- 32deb86c9eecc2d1ace8b8d6bed08393b623f0c8 621 Packages.gz
- 0270ac25a831550e8a637199d153bf9b3ebabfe0 699 Packages.bz2
- dc6ba612bbed4d9769e44cd9501e2864c1d11d75 668 Packages.xz
+ 3c9f3ac8aa10e1f32109cb5061d0b466ae717792 994 Packages
+ ec0f59664bb3505c708979e8dda5e889c3672bd9 618 Packages.gz
+ cb79be0dc041de672e63da29925c0061c257043c 703 Packages.bz2
+ 3a20aa097845b1db038bea3ad21fba30bce62f21 672 Packages.xz
 SHA256:
- 9142c5304dbec2047cf8f8fb522df4acd5c26b9f6a51be7caace357092d17dea 994 Packages
- 7ee78ed95bc926c30e4025c09f7dd800dad0e873a3feb9314773ec642a5c6d1a 621 Packages.gz
- 1542a32836c84ace945e64011dc016ca563b2cd4e38cc110ee1e7d11d3419448 699 Packages.bz2
- c2dbd6c72a29e7c1e0e4fd07a8f5677f5fe756a938ff0b2331e2e96c7959bd05 668 Packages.xz
+ 011703ff5c2bc6a95daba3ea283f9c812bb9f107a554f2e365c3014a23adf640 994 Packages
+ bf5e594ab20f28746be3fa452e436f583ff2ddae376a5b91c240cda83c810e77 618 Packages.gz
+ 469acf3692db0231143f6122db12b5b7c5ec4d0d0004b23aba7d2e9847479428 703 Packages.bz2
+ 88fabe52a80193e861c915267723a25b6c3f38ac55f0a2c04a696ec76c608e35 672 Packages.xz
