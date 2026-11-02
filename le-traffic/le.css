@@ -8,13 +8,14 @@
 /* Hallmark · hero-review: fix · 5 findings · 4 resolved 1 partial (the capture holds 60% of the screen at 1440 and 1920, 57% at 1280; its idle music card needs a capture with media playing) */
 /* Hallmark · finish-review: subagent · 8 findings · 8 resolved (the idle "Không phát" card went with the re-capture with music playing) */
 /* Hallmark · finish-review: subagent, second round after the music re-capture and the iPhone frames · 7 findings · 6 resolved 1 waived (47b) */
+/* Hallmark · finish-review: subagent, third round on the two-screen clip the owner asked for · 7 findings · 7 resolved (caption-free poster, the phone taps before CarPlay changes, whole frames without blending so the edge glow and the numbers stay true, labels off the control strip, the play button below the frame, the lead kept whole) */
 /* Hallmark · waive 47b · three phone frames around real iPhone screenshots in the install steps · the owner asked for iPhone frames to show each step on the phone */
 @import url("./tokens.css");
 @import url("./base.css");
 
 body { font-weight: 500; }
 h1, h2, h3 { color: var(--color-ink); }
-.lead { color: var(--color-ink-2); }
+.lead { color: var(--color-ink-2); text-wrap: pretty; }
 
 /* Controls: one filled primary, a quiet secondary, all eight states. */
 .btn {
@@ -113,7 +114,7 @@ html:not(.js) .moment .screen { display: block; }
 .trailer .head { grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); align-items: end; gap: var(--space-2xl); }
 .player { position: relative; margin: 0; }
 .player video { width: 100%; aspect-ratio: 16 / 9; border-radius: var(--radius-card); background: var(--color-paper); outline: 1px solid color-mix(in oklab, var(--color-ink) 8%, transparent); outline-offset: -1px; }
-.player__play { position: absolute; left: 50%; bottom: var(--space-lg); gap: var(--space-xs); background: var(--color-paper); translate: -50% 0; }
+.player__play { position: absolute; left: 50%; bottom: var(--space-xs); gap: var(--space-xs); background: var(--color-paper); translate: -50% 0; }
 .player__play:active { transform: translateY(1px); }
 
 /* The sign search, Lề's own set beneath it. */
