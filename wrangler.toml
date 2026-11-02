@@ -1,0 +1,10 @@
+# Cloudflare Pages: the repository's files plus functions/ (download counts). Deploy with tools/deploy-cloudflare.sh.
+name = "bechou-repo"
+pages_build_output_dir = ".cf-dist"
+compatibility_date = "2026-10-01"
+
+[[d1_databases]]
+binding = "DB"
+database_name = "bechou-repo-downloads"
+database_id = "2389ce40-77e1-4c16-ba53-69cb7d2bcd0a"
+migrations_dir = "migrations"

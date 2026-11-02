@@ -1,6 +1,6 @@
 # repo.bechou.dev
 
-The APT repository for bechou's tweaks (rootless, iOS 15 to 26), served by GitHub Pages at https://repo.bechou.dev/.
+The APT repository for bechou's tweaks (rootless, iOS 15 to 26) at https://repo.bechou.dev/.
 
 | Path | What |
 |---|---|
@@ -9,13 +9,23 @@ The APT repository for bechou's tweaks (rootless, iOS 15 to 26), served by GitHu
 | `index.html` | The repository's page: its address, how to add it, and one row per package (`<li class="pkg">`; a new package is one more row). |
 | `le-traffic/` | Lề's page (the package's `Depiction`) and `depiction.json` (its `SileoDepiction`). |
 | `assets/` | What every page shares: `tokens.css` (colours, type, spacing) and `base.css`, the Saira typeface (SIL OFL, `assets/fonts/OFL.txt`), icons and the home's `home.css` and share image. |
+| `functions/`, `migrations/`, `wrangler.toml` | Cloudflare Pages only: `functions/pool/[file].js` counts each `.deb` download into D1, `functions/api/downloads.js` serves the counts. |
+| `404.html` | The not-found page; it also keeps Cloudflare Pages from answering missing APT files with the home page. |
+
+## Hosting and download counts
+
+The site runs on Cloudflare Pages, project `bechou-repo`, with the custom domain `repo.bechou.dev` (a CNAME at Fastmail to `bechou-repo.pages.dev`). GitHub Pages still publishes the same repository from `main` and can take the domain back by pointing the CNAME at `bechou0410.github.io`.
+
+APT, Sileo and Zebra fetch a package at `pool/<file>.deb`, relative to the source. On Cloudflare that path runs `functions/pool/[file].js`, which serves the file and adds one to the count for its package, version and package manager (named from the User-Agent: Sileo, Zebra, Cydia, Installer, APT, a browser, or other). Only a request for the whole file or its first bytes counts. No address or device detail is stored. The counts live in the D1 database `bechou-repo-downloads` (`migrations/0001_downloads.sql`). `GET /api/downloads` returns them as `{packages: {<id>: {total, clients}}}`, and `assets/downloads.js` shows them on the pages once a package has been downloaded at least once.
+
+Deploy after committing: `tools/deploy-cloudflare.sh` (it sends the committed tree; it needs `wrangler` logged in to the Cloudflare account). Read the counts with `wrangler d1 execute bechou-repo-downloads --remote --command "SELECT * FROM downloads"`.
 
 ## Publish a package
 
 1. Build the release in its own repository (for Lề: `make package FINALPACKAGE=1`, then `scripts/verify-package.py`).
 2. Copy the `.deb` into `pool/` (keep earlier versions there if Sileo should offer them).
 3. Add the package's extra fields to `tools/packages-extra.json` if it has a depiction of its own.
-4. Run `python3 tools/build-index.py`, commit and push.
+4. Run `python3 tools/build-index.py`, commit and push, then run `tools/deploy-cloudflare.sh`.
 
 ## Lề's pictures
 
