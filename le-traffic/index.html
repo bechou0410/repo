@@ -1,0 +1,278 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Lề · tốc độ và biển báo trên CarPlay</title>
+<meta name="description" content="Lề là tweak cho iPhone đã jailbreak (rootless): tốc độ, biển giới hạn, biển báo và làn đường nổi ở lề màn hình CarPlay và trong Google Maps, lấy từ VietMap Live, GOFA hoặc Waze.">
+<meta name="theme-color" content="#121315">
+<meta property="og:title" content="Lề · liếc là biết">
+<meta property="og:description" content="Tốc độ, giới hạn, biển báo và làn đường ở lề màn hình CarPlay.">
+<meta property="og:image" content="https://repo.bechou.dev/le-traffic/media/og.png">
+<meta property="og:url" content="https://repo.bechou.dev/le-traffic/">
+<link rel="icon" href="../assets/favicon.png">
+<link rel="apple-touch-icon" href="media/icon.png">
+<link rel="preload" href="../assets/fonts/Saira-SemiBold.ttf" as="font" type="font/ttf" crossorigin>
+<link rel="stylesheet" href="../assets/site.css">
+<link rel="stylesheet" href="le.css">
+<script>document.documentElement.classList.add('js')</script>
+</head>
+<body>
+
+<header class="hero">
+  <nav class="nav" aria-label="Chính">
+    <a class="wordmark" href="./"><img src="media/icon.png" alt="" width="32" height="32">Lề</a>
+    <div class="nav__links">
+      <a href="#bien">Biển báo</a>
+      <a href="#cai">Cài đặt</a>
+      <a href="#hoi">Hỏi đáp</a>
+    </div>
+    <a class="button" data-add-source href="sileo://source/https://repo.bechou.dev/">Thêm vào Sileo</a>
+  </nav>
+
+  <figure class="hero__picture" aria-hidden="false">
+    <img src="media/hero.png" width="2880" height="1620"
+         alt="Bubble của Lề, bố cục Lề đứng, trên bản đồ CarPlay ban đêm: 47 km/h ở đường giới hạn 50, làn đường 250 m phía trước, rồi biển cấm vượt đang hiệu lực, camera đèn đỏ ở 80 m và biển 60 ở 150 m.">
+  </figure>
+
+  <div class="hero__words">
+    <h1 class="hero__title">
+      <span class="hero__line"><span>Liếc</span></span>
+      <span class="hero__line"><span class="slot" data-ui role="img" aria-label="biển"><video poster="media/signs-loop.png" width="840" height="240" muted autoplay loop playsinline preload="auto" aria-hidden="true"><source src="media/signs-loop.mp4" type="video/mp4"><source src="media/signs-loop.webm" type="video/webm"></video></span><span>là biết.</span></span>
+    </h1>
+    <p class="hero__horizon">
+      <span class="hero__half hero__half--left">Lề đưa tốc độ, giới hạn, biển báo và làn đường</span>
+      <span class="hero__half hero__half--right">lên lề màn hình CarPlay.</span>
+    </p>
+  </div>
+  <a class="button hero__cta" data-add-source href="sileo://source/https://repo.bechou.dev/">Thêm vào Sileo</a>
+</header>
+
+<main>
+
+  <section class="signs grid" id="bien" aria-labelledby="bien-title">
+    <h2 class="signs__title" id="bien-title" data-rise><label for="sign-query">Gõ tên một biển báo</label></h2>
+    <div class="signs__field" data-ui data-rise style="--i:1">
+      <input id="sign-query" class="signs__input" type="text" value="cấm vượt" autocomplete="off" spellcheck="false" aria-describedby="sign-hint">
+    </div>
+    <p id="sign-hint" class="sr">Tên biển hoặc một con số tốc độ; Lề vẽ biển tương ứng bên dưới.</p>
+    <div class="signs__answer" role="status" data-ui data-rise style="--i:2">
+      <img class="signs__sign" src="media/signs/no_passing_in.png" width="240" height="240" alt="Biển cấm vượt do Lề vẽ">
+      <div class="signs__text">
+        <p class="signs__name">Cấm vượt</p>
+        <p class="signs__rule">Khi xe đã vào đoạn có biển, Lề ghi “hiệu lực” thay cho khoảng cách.</p>
+      </div>
+    </div>
+    <div class="signs__set" role="group" aria-label="Mọi biển Lề vẽ" data-rise style="--i:3"></div>
+    <div class="signs__examples" data-rise style="--i:3">
+      <span class="signs__try">Thử</span>
+      <button type="button" data-example="80">80</button>
+      <button type="button" data-example="camera phạt nguội">camera phạt nguội</button>
+      <button type="button" data-example="cấm quay đầu">cấm quay đầu</button>
+      <button type="button" data-example="trạm thu phí">trạm thu phí</button>
+    </div>
+    <p class="signs__note" data-rise style="--i:4">Lề tự vẽ 32 biển theo QCVN 41 và biển giới hạn với bất kỳ con số nào, cùng mũi tên làn và biểu tượng cảnh báo Waze. Gói cài không chứa hình của ứng dụng nào khác.</p>
+  </section>
+
+  <section class="bands" aria-labelledby="bands-title">
+    <div class="band" data-on="true" style="--field: var(--paint); --field-ink: var(--paint-ink)">
+      <div class="band__inner grid">
+        <h2 class="band__sentence" id="bands-title">Bubble nổi trên mọi màn hình CarPlay.</h2>
+        <p class="band__more" id="band-1">Kéo tới bốn góc; các mảnh tự lật theo mép, và Lề nhớ chỗ bạn đặt.</p>
+        <button class="switch" type="button" role="switch" aria-checked="true" aria-describedby="band-1" data-ui><span class="sr">Bubble nổi</span></button>
+      </div>
+    </div>
+    <div class="band" data-on="false" style="--field: var(--red); --field-ink: var(--red-ink)">
+      <div class="band__inner grid">
+        <p class="band__sentence">Một thẻ riêng ngay trong Google Maps.</p>
+        <p class="band__more" id="band-2">Trên bản đồ toàn màn hình, trong ô Dashboard của CarPlay và cả trên iPhone.</p>
+        <button class="switch" type="button" role="switch" aria-checked="false" aria-describedby="band-2" data-ui><span class="sr">Thẻ Google Maps</span></button>
+      </div>
+    </div>
+    <div class="band" data-on="true" style="--field: var(--amber); --field-ink: var(--amber-ink)">
+      <div class="band__inner grid">
+        <p class="band__sentence">Vượt tốc độ là thấy ngay.</p>
+        <p class="band__more" id="band-3">Số chuyển đỏ kèm “+25”; gần chạm giới hạn thì vàng; mép màn hình nhấp nháy nếu bạn bật.</p>
+        <button class="switch" type="button" role="switch" aria-checked="true" aria-describedby="band-3" data-ui><span class="sr">Cảnh báo vượt tốc độ</span></button>
+      </div>
+    </div>
+    <div class="band" data-on="false" style="--field: var(--blue); --field-ink: var(--blue-ink)">
+      <div class="band__inner grid">
+        <p class="band__sentence">Ứng dụng nguồn tự được đánh thức.</p>
+        <p class="band__more" id="band-4">Lề giữ VietMap Live, GOFA hoặc Waze chạy nền khi bubble hay thẻ đang hiện.</p>
+        <button class="switch" type="button" role="switch" aria-checked="false" aria-describedby="band-4" data-ui><span class="sr">Đánh thức ứng dụng nguồn</span></button>
+      </div>
+    </div>
+  </section>
+
+  <section class="gallery" id="bo-cuc" aria-labelledby="bo-cuc-title">
+    <h2 class="gallery__title" id="bo-cuc-title" data-rise>Bốn bố cục, năm chất liệu</h2>
+    <ul class="gallery__grid">
+      <li class="tile" data-rise style="--i:0">
+        <video poster="media/tile-goc.png" width="680" height="850" muted autoplay loop playsinline preload="metadata" aria-label="Bubble bố cục Góc trong một chuyến đi: tốc độ tăng từ 30 lên 62 km/h trên đường giới hạn 50, chuyển vàng khi gần chạm và đỏ khi vượt."><source src="media/drive.mp4" type="video/mp4"><source src="media/drive.webm" type="video/webm"></video>
+        <div class="tile__strip">
+          <p class="tile__values"><span>30–62 km/h</span><span>giới hạn 50</span><span>làn</span><span>biển</span></p>
+          <p class="tile__meta"><span>Đêm</span><span>Nhựa</span></p>
+          <p class="tile__name">Góc</p>
+        </div>
+      </li>
+      <li class="tile" data-rise style="--i:1">
+        <img src="media/tile-gon.png" width="680" height="850" loading="lazy" alt="Bubble bố cục Gọn: chỉ những gì cần liếc">
+        <div class="tile__strip">
+          <p class="tile__values"><span>tốc độ</span><span>giới hạn</span><span>biển gần nhất</span></p>
+          <p class="tile__meta"><span>Đêm</span><span>Nhựa</span></p>
+          <p class="tile__name">Gọn</p>
+        </div>
+      </li>
+      <li class="tile" data-rise style="--i:2">
+        <img src="media/tile-le-dung.png" width="680" height="850" loading="lazy" alt="Bubble bố cục Lề đứng: xếp dọc theo mép màn hình">
+        <div class="tile__strip">
+          <p class="tile__values"><span>tốc độ</span><span>giới hạn</span><span>làn</span><span>biển</span></p>
+          <p class="tile__meta"><span>Đêm</span><span>Nhựa</span></p>
+          <p class="tile__name">Lề đứng</p>
+        </div>
+      </li>
+      <li class="tile" data-rise style="--i:3">
+        <img src="media/tile-le-ngang.png" width="680" height="850" loading="lazy" alt="Bubble bố cục Lề ngang: xếp ngang theo mép trên">
+        <div class="tile__strip">
+          <p class="tile__values"><span>tốc độ</span><span>giới hạn</span><span>làn</span><span>biển</span></p>
+          <p class="tile__meta"><span>Đêm</span><span>Nhựa</span></p>
+          <p class="tile__name">Lề ngang</p>
+        </div>
+      </li>
+      <li class="tile" data-rise style="--i:0">
+        <img src="media/tile-son.png" width="680" height="850" loading="lazy" alt="Bubble sơn: nền đặc, dễ đọc nhất">
+        <div class="tile__strip">
+          <p class="tile__values"><span>32 km/h</span><span>giới hạn 50</span><span>bình thường</span></p>
+          <p class="tile__meta"><span>Ngày</span><span>Góc</span></p>
+          <p class="tile__name">Sơn</p>
+        </div>
+      </li>
+      <li class="tile" data-rise style="--i:1">
+        <img src="media/tile-kinh.png" width="680" height="850" loading="lazy" alt="Bubble kính: trong suốt, nhìn xuyên bản đồ">
+        <div class="tile__strip">
+          <p class="tile__values"><span>47 km/h</span><span>giới hạn 50</span><span>sắp chạm</span></p>
+          <p class="tile__meta"><span>Ngày</span><span>Góc</span></p>
+          <p class="tile__name">Kính</p>
+        </div>
+      </li>
+      <li class="tile" data-rise style="--i:2">
+        <img src="media/tile-suong.png" width="680" height="850" loading="lazy" alt="Bubble sương: mờ như kính phun sương">
+        <div class="tile__strip">
+          <p class="tile__values"><span>32 km/h</span><span>giới hạn 50</span><span>bình thường</span></p>
+          <p class="tile__meta"><span>Ngày</span><span>Góc</span></p>
+          <p class="tile__name">Sương</p>
+        </div>
+      </li>
+      <li class="tile" data-rise style="--i:3">
+        <img src="media/tile-tran.png" width="680" height="850" loading="lazy" alt="Bubble trần: không nền, chỉ số và biển">
+        <div class="tile__strip">
+          <p class="tile__values"><span>58 km/h</span><span>giới hạn 50</span><span>vượt +8</span></p>
+          <p class="tile__meta"><span>Ngày</span><span>Góc</span></p>
+          <p class="tile__name">Trần</p>
+        </div>
+      </li>
+    </ul>
+    <p class="gallery__note" data-rise>Bốn ô đầu dùng chất liệu thứ năm, Nhựa. Kéo bubble sang góc khác trên CarPlay, các mảnh tự lật để bám hai mép của góc đó.</p>
+  </section>
+
+  <section class="sources grid" id="nguon" aria-labelledby="nguon-title">
+    <h2 class="sources__title" id="nguon-title" data-rise>Ba nguồn,<br>một cách hiển thị.</h2>
+    <figure class="sources__picture" data-rise style="--i:2">
+      <img src="media/card.png" width="1044" height="1305" loading="lazy"
+           alt="Thẻ của Lề trong ô Dashboard Google Maps trên CarPlay: 47 km/h ở đường 50, làn 260 m phía trước, cấm vượt hiệu lực, camera 80 m.">
+      <figcaption>Thẻ của Lề trong ô Dashboard của Google Maps.</figcaption>
+    </figure>
+    <p class="sources__word" aria-hidden="true">Chi tiết</p>
+    <table class="sources__table" data-rise style="--i:1">
+      <caption class="sr">Nguồn dữ liệu, yêu cầu và gói</caption>
+      <tbody>
+        <tr><th scope="row">Nguồn</th><td>VietMap Live</td><td>tốc độ, giới hạn, biển, làn</td></tr>
+        <tr><th scope="row">Nguồn</th><td>GOFA</td><td>tốc độ, giới hạn, biển, làn</td></tr>
+        <tr><th scope="row">Nguồn</th><td>Waze</td><td>tốc độ, giới hạn, cảnh báo</td></tr>
+        <tr class="group"><th scope="row">Cần</th><td>iOS</td><td>15 đến 26, rootless</td></tr>
+        <tr><th scope="row">Cần</th><td>CarPlay</td><td>có dây hoặc không dây</td></tr>
+        <tr><th scope="row">Cần</th><td>Google Maps</td><td>chỉ cho thẻ</td></tr>
+        <tr><th scope="row">Cần</th><td>Gói nền</td><td>mobilesubstrate, PreferenceLoader</td></tr>
+        <tr class="group"><th scope="row">Gói</th><td>dev.bechou.le</td><td>0.2.0 · 1,8 MB</td></tr>
+        <tr><th scope="row">Gói</th><td>Xung đột</td><td>GMapHUD</td></tr>
+        <tr><th scope="row">Gói</th><td>Tải thẳng</td><td><a class="link" href="../pool/dev.bechou.le_0.2.0_iphoneos-arm64.deb" download>tệp .deb</a></td></tr>
+      </tbody>
+    </table>
+  </section>
+
+  <section class="steps grid" id="cai" aria-labelledby="cai-title">
+    <ol class="steps__list">
+      <li class="steps__step" data-rise>
+        <h2 class="steps__line" id="cai-title">Trước tiên, thêm nguồn.</h2>
+        <p>Trong Sileo hoặc Zebra, thêm <span class="steps__url">https://repo.bechou.dev/</span>.</p>
+      </li>
+      <li class="steps__step" data-rise>
+        <p class="steps__line">Rồi cài Lề, respring.</p>
+        <p>Sileo cài kèm mobilesubstrate và PreferenceLoader nếu máy chưa có.</p>
+      </li>
+      <li class="steps__step" data-rise>
+        <p class="steps__line">Sau đó chọn nguồn.</p>
+        <p>Cài đặt › Lề: VietMap Live, GOFA hoặc Waze, rồi bố cục và chất liệu của bubble.</p>
+      </li>
+      <li class="steps__step" data-rise>
+        <p class="steps__line steps__line--last">Cuối cùng, cắm CarPlay.</p>
+        <p>Mở ứng dụng nguồn một lần; từ đó Lề tự đánh thức nó mỗi chuyến đi.</p>
+      </li>
+    </ol>
+  </section>
+
+  <section class="faq grid" id="hoi" aria-labelledby="hoi-title">
+    <h2 class="faq__title" id="hoi-title" data-rise>Hỏi đáp</h2>
+    <dl class="faq__list">
+      <div class="faq__row" data-rise>
+        <dt>Có phải để ứng dụng nguồn trên màn hình?</dt>
+        <dd>Không. Khi bubble hoặc thẻ đang hiện, Lề giữ ứng dụng nguồn chạy nền (công tắc đánh thức trong Cài đặt › Lề). VietMap Live có thể nằm trên màn hình CarPlay cùng lúc.</dd>
+      </div>
+      <div class="faq__row" data-rise>
+        <dt>Lề có thay được đồng hồ của xe?</dt>
+        <dd>Không. Số liệu có thể thiếu, trễ hoặc sai. Biển báo thật, đồng hồ xe và luật giao thông luôn đúng hơn. Chỉ chỉnh Lề khi xe đã đỗ.</dd>
+      </div>
+      <div class="faq__row" data-rise>
+        <dt>Vì sao Waze không có làn đường?</dt>
+        <dd>Waze không đưa ra bảng làn. VietMap Live và GOFA có; với Waze, Lề hiện tốc độ, giới hạn và các cảnh báo như camera, tai nạn, công an.</dd>
+      </div>
+      <div class="faq__row" data-rise>
+        <dt>Dùng chung với GMapHUD được không?</dt>
+        <dd>Không. Hai tweak dùng những lớp cùng tên trong Google Maps, nên gói Lề khai báo xung đột với GMapHUD.</dd>
+      </div>
+      <div class="faq__row" data-rise>
+        <dt>Lề có gửi dữ liệu đi đâu?</dt>
+        <dd>Không. Số liệu đi từ ứng dụng nguồn tới CarPlay ngay trên iPhone, qua một tiến trình chuyển tiếp của Lề. Không có máy chủ nào.</dd>
+      </div>
+      <div class="faq__row" data-rise>
+        <dt>Số liệu cũ có còn hiện?</dt>
+        <dd>Mỗi số liệu chỉ có hiệu lực 5 giây kể từ lúc đo. Hết hạn mà không có tin mới thì Lề ẩn nó, trừ khi nguồn vẫn đang báo về đoạn đường ấy hoặc xe đang đứng yên.</dd>
+      </div>
+    </dl>
+  </section>
+
+</main>
+
+<footer class="close">
+  <div class="close__top grid">
+    <div class="close__invite">
+      <h2 class="close__title">Thêm repo,<br>rồi cài Lề.</h2>
+      <a class="button button--ink" data-add-source href="sileo://source/https://repo.bechou.dev/">Thêm vào Sileo</a>
+    </div>
+    <ul class="close__links">
+      <li><a class="link" href="zbra://sources/add/https://repo.bechou.dev/">Thêm vào Zebra</a></li>
+      <li><a class="link" href="https://repo.bechou.dev/">repo.bechou.dev</a></li>
+      <li><a class="link" href="../pool/dev.bechou.le_0.2.0_iphoneos-arm64.deb" download>Tải .deb</a></li>
+    </ul>
+  </div>
+  <div class="close__legal">
+    <p>© 2026 bechou · dev.bechou.le 0.2.0 · Font Saira, SIL Open Font License.</p>
+    <p>VietMap Live, GOFA, Waze, Google Maps và CarPlay là thương hiệu của chủ sở hữu; Lề không liên kết với họ.</p>
+  </div>
+  <p class="close__name" aria-hidden="true">Lề</p>
+</footer>
+
+<script src="le.js" defer></script>
+</body>
+</html>

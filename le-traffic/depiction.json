@@ -1,0 +1,96 @@
+{
+ "minVersion": "0.4",
+ "class": "DepictionTabView",
+ "headerImage": "https://repo.bechou.dev/le-traffic/media/header.png",
+ "tintColor": "#E4362E",
+ "tabs": [
+  {
+   "tabname": "Chi tiết",
+   "class": "DepictionStackView",
+   "views": [
+    {
+     "class": "DepictionMarkdownView",
+     "markdown": "**Liếc là biết.** Lề đưa tốc độ, biển giới hạn, biển báo và làn đường lên lề màn hình CarPlay: một bubble nổi trên mọi màn hình và một thẻ riêng trong Google Maps.\n\n- **Nguồn:** VietMap Live, GOFA hoặc Waze, chọn trong Cài đặt › Lề. Lề tự đánh thức ứng dụng nguồn khi bubble hay thẻ đang hiện.\n- **Bubble:** bốn bố cục (Góc, Gọn, Lề đứng, Lề ngang), năm chất liệu, kéo tới bốn góc.\n- **Vượt tốc độ:** số chuyển vàng khi gần chạm, đỏ kèm “+N” khi vượt; mép màn hình nhấp nháy nếu bạn bật.\n- **Biển báo:** Lề tự vẽ mọi biển theo QCVN 41. Biển đang hiệu lực ghi “hiệu lực”, biển phía trước ghi khoảng cách.\n\nSố liệu có thể thiếu, trễ hoặc sai; biển báo thật và đồng hồ xe luôn đúng hơn. Chỉ chỉnh Lề khi xe đã đỗ.",
+     "useSpacing": true
+    },
+    {
+     "class": "DepictionScreenshotsView",
+     "itemCornerRadius": 10,
+     "itemSize": "{160, 200}",
+     "screenshots": [
+      {
+       "url": "https://repo.bechou.dev/le-traffic/media/tile-goc.png",
+       "accessibilityText": "Bố cục Góc"
+      },
+      {
+       "url": "https://repo.bechou.dev/le-traffic/media/tile-le-dung.png",
+       "accessibilityText": "Bố cục Lề đứng"
+      },
+      {
+       "url": "https://repo.bechou.dev/le-traffic/media/tile-le-ngang.png",
+       "accessibilityText": "Bố cục Lề ngang"
+      },
+      {
+       "url": "https://repo.bechou.dev/le-traffic/media/tile-gon.png",
+       "accessibilityText": "Bố cục Gọn"
+      },
+      {
+       "url": "https://repo.bechou.dev/le-traffic/media/tile-tran.png",
+       "accessibilityText": "Chất liệu Trần, vượt tốc độ"
+      },
+      {
+       "url": "https://repo.bechou.dev/le-traffic/media/card.png",
+       "accessibilityText": "Thẻ trong Google Maps"
+      }
+     ]
+    },
+    {
+     "class": "DepictionSeparatorView"
+    },
+    {
+     "class": "DepictionTableTextView",
+     "title": "Phiên bản",
+     "text": "0.2.0"
+    },
+    {
+     "class": "DepictionTableTextView",
+     "title": "iOS",
+     "text": "15 đến 26, rootless"
+    },
+    {
+     "class": "DepictionTableTextView",
+     "title": "Nguồn",
+     "text": "VietMap Live, GOFA, Waze"
+    },
+    {
+     "class": "DepictionTableTextView",
+     "title": "Xung đột",
+     "text": "GMapHUD"
+    },
+    {
+     "class": "DepictionTableButtonView",
+     "title": "Trang giới thiệu",
+     "action": "https://repo.bechou.dev/le-traffic/",
+     "openExternal": true
+    }
+   ]
+  },
+  {
+   "tabname": "Thay đổi",
+   "class": "DepictionStackView",
+   "views": [
+    {
+     "class": "DepictionSubheaderView",
+     "title": "0.2.0",
+     "useBoldText": true,
+     "useBottomMargin": false
+    },
+    {
+     "class": "DepictionMarkdownView",
+     "markdown": "- Bản đầu tiên trên repo.bechou.dev.\n- Bubble trên CarPlay và thẻ trong Google Maps, từ VietMap Live, GOFA hoặc Waze.\n- Mọi biển báo, mũi tên làn và biểu tượng cảnh báo do Lề tự vẽ.",
+     "useSpacing": true
+    }
+   ]
+  }
+ ]
+}
