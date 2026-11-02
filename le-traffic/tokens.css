@@ -18,6 +18,6 @@
   --color-accent: oklch(56% 0.205 29); --color-accent-2: oklch(51% 0.2 29); --color-accent-ink: oklch(96.4% 0.010 94); --color-focus: oklch(64% 0.2 29);
   --color-signal: oklch(81.3% 0.165 75);
   --font-display: "Saira", ui-sans-serif, system-ui, sans-serif; --font-body: "Saira", ui-sans-serif, system-ui, sans-serif; --display-weight: 600; --font-outlier: var(--font-body);
-  --radius-card: 12px; --radius-screen: 18px; --radius-pill: 999px; --rule-hair: 1px; --shadow-card: none;
+  --radius-card: 12px; --radius-screen: 18px; --radius-phone: 44px; --radius-phone-screen: 36px; --radius-pill: 999px; --rule-hair: 1px; --shadow-card: none;
   --tracking-display: -0.02em;
 }

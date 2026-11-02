@@ -100,7 +100,7 @@
         const button = document.createElement('button');
         button.type = 'button'; button.dataset.file = sign.file; button.setAttribute('aria-label', sign.name);
         button.setAttribute('aria-pressed', String(sign.file === 'no_passing_in'));
-        button.innerHTML = `<img src="media/signs/${sign.file}.png" width="240" height="240" alt="" loading="lazy">`;
+        button.innerHTML = `<img src="media/signs/${sign.file}.png" width="240" height="240" alt="">`;
         button.addEventListener('click', () => { input.value = sign.name.toLowerCase(); show(); });
         set.append(button);
       }
