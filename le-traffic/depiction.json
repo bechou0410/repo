@@ -54,12 +54,12 @@
     {
      "class": "DepictionTableTextView",
      "title": "Phiên bản",
-     "text": "0.2.1"
+     "text": "0.2.2"
     },
     {
      "class": "DepictionTableTextView",
      "title": "iOS",
-     "text": "15 đến 26, rootless"
+     "text": "15 đến 26, rootless hoặc roothide"
     },
     {
      "class": "DepictionTableTextView",
@@ -83,6 +83,17 @@
    "tabname": "Thay đổi",
    "class": "DepictionStackView",
    "views": [
+    {
+     "class": "DepictionSubheaderView",
+     "title": "0.2.2",
+     "useBoldText": true,
+     "useBottomMargin": false
+    },
+    {
+     "class": "DepictionMarkdownView",
+     "useSpacing": true,
+     "markdown": "- Thẻ trong Google Maps không còn chớp hay tắt khi VietMap đổi số liệu liên tục, như lúc đến gần camera.\n- Google Maps luôn mở lại được. Gặp lỗi, Lề tự dừng tới lần mở sau; Google Maps tắt 3 lần liền ngay khi vừa mở thì lần kế tiếp chạy không có Lề.\n- Chẩn đoán giữ số liệu của lần chạy gần nhất cả khi Google Maps và VietMap đã tắt, và cho biết loại jailbreak.\n- iOS 15: Cài đặt cho chọn thẻ trên Dashboard khi máy có Google Maps.\n- Có bản roothide, cho Dopamine-roothide và roothide Bootstrap."
+    },
     {
      "class": "DepictionSubheaderView",
      "title": "0.2.1",

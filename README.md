@@ -1,6 +1,6 @@
 # repo.bechou.dev
 
-The APT repository for bechou's tweaks (rootless, iOS 15 to 26) at https://repo.bechou.dev/.
+The APT repository for bechou's tweaks (rootless and roothide, iOS 15 to 26) at https://repo.bechou.dev/.
 
 | Path | What |
 |---|---|

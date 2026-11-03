@@ -9,12 +9,33 @@ Depends: firmware (>= 15.0), firmware (<< 27.0), mobilesubstrate, preferenceload
 Conflicts: org.carwidget.traffic-bubble, org.carwidget.traffic-runtime, com.chou.googlemaps.vietmap
 Replaces: org.carwidget.traffic-bubble, org.carwidget.traffic-runtime
 Architecture: iphoneos-arm64
-Version: 0.2.1
-Installed-Size: 5952
+Version: 0.2.2
+Installed-Size: 6080
 SileoDepiction: https://repo.bechou.dev/le-traffic/depiction.json
 Icon: https://repo.bechou.dev/le-traffic/media/icon.png
-Filename: pool/dev.bechou.le_0.2.1_iphoneos-arm64.deb
-Size: 1880314
-MD5sum: c2f7fff8f1191033e4e42b6d16ac774f
-SHA1: a554715f55d27ec49190614cd2c745780f031c4e
-SHA256: a1c7007e3a295a0c5091da540aa19866f9a79e18200e3ebef661f8f59ee6b601
+Filename: pool/dev.bechou.le_0.2.2_iphoneos-arm64.deb
+Size: 1938592
+MD5sum: 82002b22181323fb3a54d49db0a2ae24
+SHA1: 6ded4062bd299f1b75e42c811e43e5970b79683f
+SHA256: 838833a345ec2fb67ab43946a257dde84ee7b60612c3b87ca344ef1ea30d565b
+
+Package: dev.bechou.le
+Name: Lề
+Description: Tốc độ, biển giới hạn, biển báo và làn đường trên CarPlay, từ VietMap Live, GOFA hoặc Waze: bubble nổi trên mọi màn hình và thẻ trong Google Maps.
+Maintainer: bechou
+Author: bechou
+Section: Tweaks
+Depiction: https://repo.bechou.dev/le-traffic
+Depends: firmware (>= 15.0), firmware (<< 27.0), mobilesubstrate, preferenceloader
+Conflicts: org.carwidget.traffic-bubble, org.carwidget.traffic-runtime, com.chou.googlemaps.vietmap
+Replaces: org.carwidget.traffic-bubble, org.carwidget.traffic-runtime
+Architecture: iphoneos-arm64e
+Version: 0.2.2
+Installed-Size: 6080
+SileoDepiction: https://repo.bechou.dev/le-traffic/depiction.json
+Icon: https://repo.bechou.dev/le-traffic/media/icon.png
+Filename: pool/dev.bechou.le_0.2.2_iphoneos-arm64e.deb
+Size: 1938480
+MD5sum: 1cdaa1db7ffec13ac838e2e2fcfa7b9c
+SHA1: 8b62bb9e665d52f106082cc7fdd15cf2c8404c5d
+SHA256: 5c046f0ce3b19057e2509c5887bef04ed2f5293cf98f6dd022b755a7618f51b4

@@ -17,9 +17,9 @@ RELEASE = {
     'Suite': 'stable',
     'Version': '1.0',
     'Codename': 'ios',
-    'Architectures': 'iphoneos-arm64',
+    'Architectures': 'iphoneos-arm64 iphoneos-arm64e',
     'Components': 'main',
-    'Description': 'Tweak của bechou cho iPhone đã jailbreak (rootless).',
+    'Description': 'Tweak của bechou cho iPhone đã jailbreak (rootless và roothide).',
 }
 
 
