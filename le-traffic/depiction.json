@@ -54,7 +54,7 @@
     {
      "class": "DepictionTableTextView",
      "title": "Phiên bản",
-     "text": "0.2.2"
+     "text": "0.2.3"
     },
     {
      "class": "DepictionTableTextView",
@@ -83,6 +83,17 @@
    "tabname": "Thay đổi",
    "class": "DepictionStackView",
    "views": [
+    {
+     "class": "DepictionSubheaderView",
+     "title": "0.2.3",
+     "useBoldText": true,
+     "useBottomMargin": false
+    },
+    {
+     "class": "DepictionMarkdownView",
+     "useSpacing": true,
+     "markdown": "- roothide Bootstrap: Lề nhận bản CarPlay mà Bootstrap ký lại, nên bubble nổi hiện cả ngoài Google Maps khi bước launchd của Bootstrap đã chạy (iOS 16 trở lên, hoặc iOS 15 với Bootstrap 2.1 trở lên).\n- Chẩn đoán cho biết máy chạy roothide Bootstrap hay Dopamine-roothide, bước launchd của Bootstrap đã chạy chưa, và cần làm gì khi bubble không hiện.\n- Chẩn đoán nói rõ hơn vì sao CarPlay hoặc ứng dụng nguồn bị từ chối."
+    },
     {
      "class": "DepictionSubheaderView",
      "title": "0.2.2",
