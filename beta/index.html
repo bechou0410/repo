@@ -54,16 +54,17 @@
   <section class="trial container" id="thu" aria-labelledby="thu-title">
     <h2 id="thu-title">Đang thử</h2>
     <div class="trial__now">
-      <h3>Lề 0.2.4~beta3</h3>
-      <p>Trên iOS 15, bubble có thêm một cách tìm Dashboard: hỏi thẳng CarPlay. Vì vậy bubble vẫn gắn được khi tweak CarPlay khác đổi cửa sổ của Dashboard.</p>
-      <p>Tệp chẩn đoán giữ nguyên các dòng log dài, nên thấy rõ vì sao bubble chưa hiện.</p>
-      <p>Vẫn có từ các bản trước: relay chạy trên roothide, và nút Cài đặt cho nguồn chưa cài trong Cài đặt › Lề.</p>
+      <h3>Lề 0.2.4~beta4</h3>
+      <p>Cách hiện mới: Chỉ bubble nổi. Bubble nổi hiện ở mọi màn hình CarPlay, kể cả khi Google Maps mở toàn màn hình, và thẻ Google Maps không vẽ trên CarPlay.</p>
+      <p>Bubble gắn được lên Dashboard cả khi tweak CarPlay khác như DuoDash hạ cửa sổ của Dashboard xuống, từ iOS 15 tới iOS 18.4 trở lên.</p>
+      <p>Vẫn có từ các bản trước: relay chạy trên roothide, nút Cài đặt cho nguồn chưa cài trong Cài đặt › Lề, và tệp chẩn đoán giữ nguyên các dòng log dài.</p>
     </div>
     <h2>Cách thử</h2>
     <ol class="trial__steps">
       <li>Thêm nguồn này, rồi cập nhật Lề. Giữ cả repo.bechou.dev cũng được: Sileo chọn bản mới hơn.</li>
+      <li>Respring sau mỗi lần cập nhật, để SpringBoard và CarPlay cùng chạy bản mới.</li>
       <li>Cắm CarPlay, mở nguồn số liệu bạn dùng và xem bubble.</li>
-      <li>Gặp lỗi: Cài đặt › Lề › Chẩn đoán › Xuất tệp…, rồi gửi tệp cho bechou.</li>
+      <li>Gặp lỗi: lúc CarPlay vẫn đang cắm, vào Cài đặt › Lề › Chẩn đoán › Xuất tệp…, rồi gửi tệp cho bechou.</li>
       <li>Khi 0.2.4 lên repo.bechou.dev, Sileo tự nâng lên bản đó; lúc ấy có thể xóa nguồn này.</li>
     </ol>
   </section>
