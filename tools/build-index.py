@@ -1,25 +1,37 @@
 #!/usr/bin/env python3
-"""Builds the APT index for repo.bechou.dev from the packages in pool/.
+"""Builds an APT index for repo.bechou.dev from the packages in its pool/.
 
-Writes Packages (plain, .gz, .bz2, .xz) and Release at the repository root. Each package's stanza is its
-control file as built, plus Filename, Size and digests, plus the fields in tools/packages-extra.json for
-that package (Sileo's depiction and icon). Run it after adding or removing a .deb: python3 tools/build-index.py
+Two sources live here: the stable one at the root (https://repo.bechou.dev/) and the beta one in beta/
+(https://repo.bechou.dev/beta/), for a small group of testers. Each has its own pool/, Packages (plain, .gz,
+.bz2, .xz) and Release. Each package's stanza is its control file as built, plus Filename, Size and digests,
+plus the fields in tools/packages-extra.json for that package (Sileo's depiction and icon).
+Run it after adding or removing a .deb: python3 tools/build-index.py [beta]
 """
 import bz2, gzip, hashlib, json, lzma, subprocess, sys
 from pathlib import Path
 
-ROOT = Path(__file__).resolve().parents[1]
-POOL = ROOT / 'pool'
-EXTRA = json.loads((ROOT / 'tools/packages-extra.json').read_text())
-RELEASE = {
-    'Origin': 'bechou',
-    'Label': 'bechou',
-    'Suite': 'stable',
+SITE = Path(__file__).resolve().parents[1]
+EXTRA = json.loads((SITE / 'tools/packages-extra.json').read_text())
+# The fields that differ between the sources; Sileo and Zebra name a source by its Origin and Label.
+SOURCES = {
+    'stable': ('.', {
+        'Origin': 'bechou',
+        'Label': 'bechou',
+        'Suite': 'stable',
+        'Description': 'Tweak của bechou cho iPhone đã jailbreak (rootless và roothide).',
+    }),
+    'beta': ('beta', {
+        'Origin': 'bechou beta',
+        'Label': 'bechou beta',
+        'Suite': 'beta',
+        'Description': 'Bản thử tweak của bechou cho một nhóm nhỏ, trước khi lên repo.bechou.dev (rootless và roothide).',
+    }),
+}
+SHARED = {
     'Version': '1.0',
     'Codename': 'ios',
     'Architectures': 'iphoneos-arm64 iphoneos-arm64e',
     'Components': 'main',
-    'Description': 'Tweak của bechou cho iPhone đã jailbreak (rootless và roothide).',
 }
 
 
@@ -53,9 +65,14 @@ def stanza(deb):
 
 
 def main():
-    debs = sorted(POOL.glob('*.deb'))
+    name = sys.argv[1] if len(sys.argv) > 1 else 'stable'
+    if name not in SOURCES or len(sys.argv) > 2:
+        sys.exit('Usage: python3 tools/build-index.py [beta]')
+    folder, fields = SOURCES[name]
+    root = (SITE / folder).resolve()
+    debs = sorted((root / 'pool').glob('*.deb'))
     if not debs:
-        sys.exit('No packages in pool/.')
+        sys.exit(f'No packages in {(root / "pool").relative_to(SITE)}/.')
     packages = ('\n\n'.join(stanza(deb) for deb in debs) + '\n').encode()
     files = {
         'Packages': packages,
@@ -63,14 +80,15 @@ def main():
         'Packages.bz2': bz2.compress(packages),
         'Packages.xz': lzma.compress(packages),
     }
-    for name, data in files.items():
-        (ROOT / name).write_bytes(data)
-    release = [f'{key}: {value}' for key, value in RELEASE.items()]
+    for file, data in files.items():
+        (root / file).write_bytes(data)
+    order = ('Origin', 'Label', 'Suite', 'Version', 'Codename', 'Architectures', 'Components', 'Description')
+    release = [f'{key}: {({**SHARED, **fields})[key]}' for key in order]
     for title, digest in (('MD5Sum', hashlib.md5), ('SHA1', hashlib.sha1), ('SHA256', hashlib.sha256)):
         release.append(title + ':')
-        release += [f' {digest(data).hexdigest()} {len(data)} {name}' for name, data in files.items()]
-    (ROOT / 'Release').write_text('\n'.join(release) + '\n')
-    print(f'{len(debs)} package(s): ' + ', '.join(deb.name for deb in debs))
+        release += [f' {digest(data).hexdigest()} {len(data)} {file}' for file, data in files.items()]
+    (root / 'Release').write_text('\n'.join(release) + '\n')
+    print(f'{name}: {len(debs)} package(s): ' + ', '.join(deb.name for deb in debs))
 
 
 if __name__ == '__main__':

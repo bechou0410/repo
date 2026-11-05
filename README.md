@@ -6,6 +6,7 @@ The APT repository for bechou's tweaks (rootless and roothide, iOS 15 to 26) at 
 |---|---|
 | `Packages*`, `Release` | The index, built by `tools/build-index.py` from `pool/`. |
 | `pool/` | The packages. |
+| `beta/` | The beta source, https://repo.bechou.dev/beta/, for a small group of testers: its own `pool/`, `Packages*`, `Release` (Origin and Label `bechou beta`), `CydiaIcon.png` and a page with how to add it. Nothing on the site links to it. |
 | `index.html` | The repository's page: its address, how to add it, and one row per package (`<li class="pkg">`; a new package is one more row). |
 | `le-traffic/` | Lề's page (the package's `Depiction`) and `depiction.json` (its `SileoDepiction`). |
 | `assets/` | What every page shares: `tokens.css` (colours, type, spacing) and `base.css`, the Saira typeface (SIL OFL, `assets/fonts/OFL.txt`), icons and the home's `home.css` and share image. |
@@ -26,6 +27,16 @@ Deploy after committing: `tools/deploy-cloudflare.sh` (it sends the committed tr
 2. Copy the `.deb` into `pool/` (keep earlier versions there if Sileo should offer them).
 3. Add the package's extra fields to `tools/packages-extra.json` if it has a depiction of its own.
 4. Run `python3 tools/build-index.py`, commit and push, then run `tools/deploy-cloudflare.sh`.
+
+## Publish a beta
+
+A beta goes to `beta/` only, so testers get it before everyone else:
+
+1. In the package's repository, set a version that sorts before the release it leads to, for example `0.2.4~beta1` (Debian sorts `~` first: `0.2.3 < 0.2.4~beta1 < 0.2.4`). Build and verify it as for a release.
+2. Copy the `.deb`s into `beta/pool/` (removing the previous beta's), update "Đang thử" in `beta/index.html`, run `python3 tools/build-index.py beta`, commit and push.
+3. Testers add https://repo.bechou.dev/beta/ beside the main source. Sileo and Zebra install the higher version, so they get the beta now and the release once it is in `pool/`.
+
+The beta is unlisted, not private: this repository is public, so anyone who finds the address can install it.
 
 ## Lề's pictures
 

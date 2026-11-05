@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Bản thử: repo.bechou.dev</title>
+<meta name="description" content="Nguồn bản thử của bechou, dành cho một nhóm nhỏ trước khi phát hành trên repo.bechou.dev.">
+<meta name="robots" content="noindex, nofollow">
+<meta name="theme-color" content="#111317">
+<link rel="icon" href="../assets/repo-favicon.png">
+<link rel="apple-touch-icon" href="CydiaIcon.png">
+<link rel="preload" href="../assets/fonts/Saira-SemiBold.ttf" as="font" type="font/ttf" crossorigin>
+<link rel="stylesheet" href="../assets/home.css">
+<style>
+/* The beta source's page: the home's address block, then what is being tested and how. Its address is longer
+ * than the home's, so on a phone it takes a smaller size and may break before "beta/". */
+.source { grid-template-columns: minmax(0, 1fr); }
+.address__url code { font-size: clamp(var(--text-md), 4.4vw, var(--text-lg)); white-space: normal; }
+.trial { padding-bottom: var(--space-3xl); display: grid; gap: var(--space-xl); }
+.trial h2 { font-size: var(--text-2xl); }
+.trial__now { display: grid; gap: var(--space-2xs); padding: var(--space-lg) 0; border-block: 1px solid var(--color-rule); }
+.trial__now h3 { font-size: var(--text-xl); }
+.trial__now p, .trial__steps li { color: var(--color-ink-2); max-width: 60ch; }
+.trial__steps { margin: 0; padding-left: 1.25em; display: grid; gap: var(--space-sm); }
+.trial__steps li::marker { color: var(--color-muted); }
+</style>
+<script>document.documentElement.classList.add('js')</script>
+</head>
+<body class="home">
+<a class="skip" href="#thu">Bỏ qua tới bản đang thử</a>
+
+<header class="top">
+  <div class="container">
+    <a class="wordmark" href="../"><img src="../assets/repo-icon.png" alt="" width="32" height="32">bechou</a>
+  </div>
+</header>
+
+<main>
+  <section class="source container" aria-labelledby="source-title">
+    <h1 id="source-title">Bản thử</h1>
+    <p class="lead">Nguồn cho nhóm thử: nhận bản mới trước khi lên repo.bechou.dev.</p>
+    <div class="address" id="nguon">
+      <div class="address__url">
+        <code id="source-url">https://repo.bechou.dev/<wbr>beta/</code>
+        <button class="btn btn--quiet" type="button" data-copy="https://repo.bechou.dev/beta/" aria-describedby="source-url">Sao chép</button>
+      </div>
+      <div class="address__add">
+        <a class="btn" data-add-source href="sileo://source/https://repo.bechou.dev/beta/">Thêm vào Sileo</a>
+        <a class="btn btn--quiet" data-add-source href="zbra://sources/add/https://repo.bechou.dev/beta/">Thêm vào Zebra</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="trial container" id="thu" aria-labelledby="thu-title">
+    <h2 id="thu-title">Đang thử</h2>
+    <div class="trial__now">
+      <h3>Lề 0.2.4~beta1</h3>
+      <p>Relay chạy được trên roothide, nên bubble trên mọi màn hình CarPlay lại có số liệu từ VietMap Live, GOFA hoặc Waze.</p>
+    </div>
+    <h2>Cách thử</h2>
+    <ol class="trial__steps">
+      <li>Thêm nguồn này, rồi cập nhật Lề. Giữ cả repo.bechou.dev cũng được: Sileo chọn bản mới hơn.</li>
+      <li>Cắm CarPlay, mở nguồn số liệu bạn dùng và xem bubble.</li>
+      <li>Gặp lỗi: Cài đặt › Lề › Chẩn đoán › Xuất tệp…, rồi gửi tệp cho bechou.</li>
+      <li>Khi 0.2.4 lên repo.bechou.dev, Sileo tự nâng lên bản đó; lúc ấy có thể xóa nguồn này.</li>
+    </ol>
+  </section>
+</main>
+
+<footer class="foot">
+  <div class="container">
+    <p>© 2026 bechou. Font Saira, SIL Open Font License.</p>
+    <p>Các tweak ở đây là dự án độc lập, không liên kết với Apple, Google, VietMap, GOFA hay Waze.</p>
+  </div>
+</footer>
+
+<script>
+(() => {
+  document.querySelectorAll('[data-copy]').forEach(button => button.addEventListener('click', async () => {
+    try { await navigator.clipboard.writeText(button.dataset.copy); button.textContent = 'Đã chép'; }
+    catch { button.textContent = 'Chọn và chép tay'; }
+    setTimeout(() => { button.textContent = 'Sao chép'; }, 1800);
+  }));
+  // Sileo and Zebra open their links only on an iPhone or iPad; elsewhere the link points at the address.
+  const apple = /iPhone|iPad|iPod/.test(navigator.userAgent) || (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1);
+  if (!apple) document.querySelectorAll('[data-add-source]').forEach(link => { link.href = '#nguon'; });
+})();
+</script>
+</body>
+</html>
