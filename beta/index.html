@@ -54,14 +54,16 @@
   <section class="trial container" id="thu" aria-labelledby="thu-title">
     <h2 id="thu-title">Đang thử</h2>
     <div class="trial__now">
-      <h3>Lề 0.2.4~beta8</h3>
-      <p>Biển tốc độ của VietMap Live hiện lại trên bubble và trên thẻ Google Maps, kể cả khi VietMap được đánh thức ở nền. Từ bản 3.4.4, VietMap gửi biển qua một kênh khác, và có lúc không gửi qua kênh cũ suốt cả chuyến đi.</p>
-      <p>Vẫn có từ các bản trước: chấm trạng thái xanh/xám trên bubble, xe đứng yên hiện 0 km/h với VietMap, relay chạy với mức ưu tiên ngang ứng dụng và tệp chẩn đoán cho biết relay từng bị dừng bao lâu, CarPlay và VietMap mở lại kết nối với relay sau khi respring, cách hiện Chỉ bubble nổi, bubble gắn được lên Dashboard khi tweak như DuoDash hạ cửa sổ Dashboard.</p>
+      <h3>Lề 0.2.4~beta9</h3>
+      <p>Bubble nổi nhận số liệu như thẻ Google Maps: cả hai đọc cùng một nguồn, nên luôn hiện cùng số, kể cả khi Google Maps chưa mở. Bản này bỏ relay, tiến trình nền mà các bản trước dùng để chuyển số liệu cho bubble. Trên vài máy có DuoDash, relay không nối được với CarPlay nên bubble chỉ hiện “--”. Bubble giờ hiện tối đa 2 biển sắp tới, như thẻ.</p>
+      <p>Tự đóng app nguồn khi rời CarPlay: 20 giây sau khi ngắt CarPlay, Lề đóng ứng dụng nguồn đã chọn, trừ khi nó đang mở trên iPhone hoặc Google Maps trên iPhone đang dùng nó. Muốn giữ app chạy thì tắt “Tự đóng app nguồn khi rời CarPlay” trong Cài đặt › Lề.</p>
+      <p>Xe đứng yên hiện 0 km/h trên cả bubble lẫn thẻ khi dùng VietMap.</p>
+      <p>Vẫn có từ các bản trước: chấm trạng thái xanh/xám trên bubble, biển tốc độ của VietMap Live 3.4.4 kể cả khi VietMap được đánh thức ở nền, cách hiện Chỉ bubble nổi, bubble gắn được lên Dashboard khi tweak như DuoDash hạ cửa sổ Dashboard.</p>
     </div>
     <h2>Cách thử</h2>
     <ol class="trial__steps">
       <li>Thêm nguồn này, rồi cập nhật Lề. Giữ cả repo.bechou.dev cũng được: Sileo chọn bản mới hơn.</li>
-      <li>Respring sau mỗi lần cập nhật, để SpringBoard và CarPlay cùng chạy bản mới.</li>
+      <li>Respring sau mỗi lần cập nhật, để SpringBoard và CarPlay cùng chạy bản mới. Nếu sau đó bubble vẫn xám, rút rồi cắm lại CarPlay.</li>
       <li>Cắm CarPlay, mở nguồn số liệu bạn dùng và xem bubble.</li>
       <li>Gặp lỗi: lúc CarPlay vẫn đang cắm, vào Cài đặt › Lề › Chẩn đoán › Xuất tệp…, rồi gửi tệp cho bechou.</li>
       <li>Khi 0.2.4 lên repo.bechou.dev, Sileo tự nâng lên bản đó; lúc ấy có thể xóa nguồn này.</li>
