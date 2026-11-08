@@ -54,7 +54,7 @@
     {
      "class": "DepictionTableTextView",
      "title": "Phiên bản",
-     "text": "0.2.3"
+     "text": "0.2.4"
     },
     {
      "class": "DepictionTableTextView",
@@ -83,6 +83,17 @@
    "tabname": "Thay đổi",
    "class": "DepictionStackView",
    "views": [
+    {
+     "class": "DepictionSubheaderView",
+     "title": "0.2.4",
+     "useBoldText": true,
+     "useBottomMargin": false
+    },
+    {
+     "class": "DepictionMarkdownView",
+     "useSpacing": true,
+     "markdown": "- Bubble nổi hiện cả trên ứng dụng mà tweak khác đưa lên CarPlay từ SpringBoard (DuoDash App Bridge và DualApps, carplay-cast); chạm và kéo bubble vẫn như thường. Cần respring sau khi cập nhật.\n- Cách hiện mới **Chỉ bubble nổi**: bubble nổi ở mọi nơi trên CarPlay và không có thẻ trên CarPlay, kể cả trong Google Maps.\n- Bubble nổi đọc chung dữ liệu với thẻ trong Google Maps, nên hai nơi luôn cùng số, kể cả khi có DuoDash. Tiến trình relay chạy nền của bản trước được gỡ khi cập nhật.\n- Chấm nhỏ trên bubble: xanh khi dữ liệu từ ứng dụng nguồn đang tới, xám khi không.\n- Xe đứng yên hiện 0 km/h thay vì \"--\", trên cả thẻ và bubble.\n- Đọc được biển giới hạn tốc độ của VietMap Live 3.4.4.\n- Tùy chọn mới **Tự đóng app nguồn khi rời CarPlay**: 20 giây sau khi ngắt CarPlay, Lề đóng ứng dụng nguồn, trừ khi nó đang mở trên iPhone.\n- Thẻ trong Google Maps, kiểu \"Phần lớn: Biển giới hạn\": biển giới hạn đứng trên mảng nhựa đường mang tốc độ, không còn bị cắt góc.\n- Cài đặt › Lề có nút **Cài đặt** cạnh ứng dụng nguồn chưa cài, mở thẳng trang App Store của nó.\n- Bubble nhận đúng Dashboard trên iOS 15 và từ iOS 18.4, nên hiện và ẩn đúng theo cách hiện đã chọn.\n- Chẩn đoán cho biết dữ liệu có tới bubble không, cửa sổ của tweak khác nào đè lên bubble, và bubble trên ứng dụng truyền lên CarPlay đang làm gì."
+    },
     {
      "class": "DepictionSubheaderView",
      "title": "0.2.3",
