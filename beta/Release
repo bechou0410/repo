@@ -7,17 +7,17 @@ Architectures: iphoneos-arm64 iphoneos-arm64e
 Components: main
 Description: Bản thử tweak của bechou cho một nhóm nhỏ, trước khi lên repo.bechou.dev (rootless và roothide).
 MD5Sum:
- be50c9d9093eec9953eac8948e83df23 2019 Packages
- e22435c6740c5316ef4026fc334904a4 753 Packages.gz
- f9ccbef0aba9d8e25f3c7b3e5b277da5 941 Packages.bz2
- a438a3bd85e93e232f98031c2b875a2a 784 Packages.xz
+ 00bfe18b8179b919b88977af2d910bf4 2015 Packages
+ 9038247c18e1cbacd685218f40a9bbce 751 Packages.gz
+ 73d09c4bda40faf9a0623e0c6ec95997 940 Packages.bz2
+ 15265e6386b9b433713fb09bf06b541e 780 Packages.xz
 SHA1:
- c5d4f73ab1d3ceb551e320973fd806c89b3fdc9d 2019 Packages
- cd9499358e2c76562a9332b8cee2ee0405b73448 753 Packages.gz
- 32b61f3b90abbb221a63a583bfd3663aec3d6628 941 Packages.bz2
- 5b1810915c691f3a4901053b56ff30e89a4cbb1f 784 Packages.xz
+ e5a4251cdf1071438c2290bbce505031ec37ac8c 2015 Packages
+ 1c3d6fa7555843be469ee614299196eed3da3fc9 751 Packages.gz
+ cbcf716b9a52f58257ab4f248b74b24531ba9033 940 Packages.bz2
+ d98bf5948f6c9aaf4430345039676c037c61f69f 780 Packages.xz
 SHA256:
- 116328ecc09351e6bf8f3fafcc84ff67ce08ea617c1d177f1dd3072026369609 2019 Packages
- e0cf0bdc355b2c0498e955fe9554ab326f3561d808b3192c084f8897d516b8ad 753 Packages.gz
- bcb455b4e505606bc26de73a1dd302efe9643e551fe84fc1c0fadea4af5a05d1 941 Packages.bz2
- 792477fe853d8fe9a970b4407457abde9e2a4d07f57cabc1ef4fc7aea0eb853b 784 Packages.xz
+ eb463fa7c8ad134ecca780fb2018ea4d432d08b0a98859a4713509d49fc819d3 2015 Packages
+ a930b5f223dd7881c07a2caf8cb66f26cc1ed55cf14ed905f24f859969c53a60 751 Packages.gz
+ 5d4b90b7dde25abf2ae72f826355c0fe3946e6901c49627058c2e8c68f59a575 940 Packages.bz2
+ 7b7f0b6f6e77fb65b4db6fb8dfa054f4a28207ffdf1c89ad53f0b6c7a07d79de 780 Packages.xz

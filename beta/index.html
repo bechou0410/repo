@@ -54,12 +54,11 @@
   <section class="trial container" id="thu" aria-labelledby="thu-title">
     <h2 id="thu-title">Đang thử</h2>
     <div class="trial__now">
-      <h3>Lề 0.2.4~beta10</h3>
-      <p>Bubble nổi hiện trên app mà DuoDash App Bridge hay carplay-cast truyền lên CarPlay, kể cả YouTube toàn màn hình. Các tweak này vẽ app trong một cửa sổ riêng phủ kín màn xe, nên trước đây bubble bị che. Giờ Lề vẽ thêm bubble ngay trên cửa sổ đó, cùng số liệu và vị trí; chạm để thu gọn, kéo để đổi góc như thường. Nhớ respring sau khi cập nhật.</p>
-      <p>Nếu dùng DuoDash: mở một app qua App Bridge và xem bubble. Không thấy bubble thì xuất chẩn đoán lúc app đó vẫn đang mở trên CarPlay.</p>
-      <p>Thẻ Google Maps, kiểu “Phần lớn: Biển giới hạn”: biển giới hạn đứng trên mảng nhựa đường mang tốc độ, không còn bị cắt góc. Gần giới hạn thì viền mảng chuyển vàng, vượt giới hạn thì chuyển đỏ.</p>
-      <p>Chẩn đoán ghi thêm cửa sổ nào đang đè lên bubble, để biết vì sao bubble không hiện.</p>
-      <p>Vẫn có từ các bản trước: bubble và thẻ đọc cùng một nguồn số liệu, tự đóng app nguồn 20 giây sau khi rời CarPlay, 0 km/h khi xe đứng yên, chấm trạng thái xanh/xám trên bubble, cách hiện Chỉ bubble nổi.</p>
+      <h3>Lề 0.2.5~beta1</h3>
+      <p>Bảng làn với VietMap Live đi theo màn CarPlay của VietMap. Khi xe tới đoạn có làn và VietMap hiện bảng làn ở đầu màn hình, bubble và thẻ Google Maps hiện ngay đúng bảng đó và giữ suốt đoạn, thay vì nhảy sang ngã rẽ kế tiếp như trước. Lúc VietMap chưa có bảng, Lề vẫn đếm ngược tới ngã rẽ sắp tới kèm khoảng cách. Bảng không còn chớp: VietMap bỏ bảng thoáng qua thì Lề giữ thêm 2 giây, dừng đèn đỏ lâu cũng không mất bảng.</p>
+      <p>Khi lái thử: tới ngã rẽ có làn, so bubble với bảng trên màn CarPlay của VietMap. Thấy lệch thì xuất chẩn đoán ngay lúc đó.</p>
+      <p>Mới từ sau 0.2.4: nếu CarPlay khởi động lại liên tục mà crash report chỉ vào bubble nổi, Lề tự tắt bubble và báo trong Cài đặt › Lề, nơi bật lại được. Bubble giữ một cỡ khi chạm để thu gọn hay mở ra.</p>
+      <p>Vẫn có từ các bản trước: bubble trên app mà DuoDash hay carplay-cast truyền lên CarPlay, thẻ Google Maps kiểu “Phần lớn: Biển giới hạn”, chẩn đoán ghi cửa sổ đè lên bubble.</p>
     </div>
     <h2>Cách thử</h2>
     <ol class="trial__steps">
@@ -67,7 +66,7 @@
       <li>Respring sau mỗi lần cập nhật, để SpringBoard và CarPlay cùng chạy bản mới. Nếu sau đó bubble vẫn xám, rút rồi cắm lại CarPlay.</li>
       <li>Cắm CarPlay, mở nguồn số liệu bạn dùng và xem bubble.</li>
       <li>Gặp lỗi: lúc CarPlay vẫn đang cắm, vào Cài đặt › Lề › Chẩn đoán › Xuất tệp…, rồi gửi tệp cho bechou.</li>
-      <li>Khi 0.2.4 lên repo.bechou.dev, Sileo tự nâng lên bản đó; lúc ấy có thể xóa nguồn này.</li>
+      <li>Khi 0.2.5 lên repo.bechou.dev, Sileo tự nâng lên bản đó; lúc ấy có thể xóa nguồn này.</li>
     </ol>
   </section>
 </main>
