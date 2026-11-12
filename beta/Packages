@@ -9,15 +9,15 @@ Depends: firmware (>= 15.0), firmware (<< 27.0), mobilesubstrate, preferenceload
 Conflicts: org.carwidget.traffic-bubble, org.carwidget.traffic-runtime, com.chou.googlemaps.vietmap
 Replaces: org.carwidget.traffic-bubble, org.carwidget.traffic-runtime
 Architecture: iphoneos-arm64
-Version: 0.2.5~beta1
-Installed-Size: 5480
+Version: 0.2.5~beta2
+Installed-Size: 5512
 SileoDepiction: https://repo.bechou.dev/le-traffic/depiction.json
 Icon: https://repo.bechou.dev/le-traffic/media/icon.png
-Filename: pool/dev.bechou.le_0.2.5~beta1_iphoneos-arm64.deb
-Size: 1753380
-MD5sum: 0344a1fa08092239dc6a4698415e62c9
-SHA1: 85952f5b43ee71a002af54e6a32da99b015ba2eb
-SHA256: 1dfdbf12fa078561974366fd29c8f9a676d4d6168d8e7ff4b6ec6aa6e85d9cb5
+Filename: pool/dev.bechou.le_0.2.5~beta2_iphoneos-arm64.deb
+Size: 1763570
+MD5sum: 2b715463a9d4e99c1848d5b2b4e3adc1
+SHA1: 1d60bb370f5f3a5a4821552c54784a1dde6bdaae
+SHA256: b471d3b92bb24482387591fdd94a9adb42cb25876ed04f7674d99afc2c0df015
 
 Package: dev.bechou.le
 Name: Lề
@@ -30,12 +30,12 @@ Depends: firmware (>= 15.0), firmware (<< 27.0), mobilesubstrate, preferenceload
 Conflicts: org.carwidget.traffic-bubble, org.carwidget.traffic-runtime, com.chou.googlemaps.vietmap
 Replaces: org.carwidget.traffic-bubble, org.carwidget.traffic-runtime
 Architecture: iphoneos-arm64e
-Version: 0.2.5~beta1
-Installed-Size: 5480
+Version: 0.2.5~beta2
+Installed-Size: 5512
 SileoDepiction: https://repo.bechou.dev/le-traffic/depiction.json
 Icon: https://repo.bechou.dev/le-traffic/media/icon.png
-Filename: pool/dev.bechou.le_0.2.5~beta1_iphoneos-arm64e.deb
-Size: 1753302
-MD5sum: d5afcbe08d9bd044fd8996f5c60f3704
-SHA1: 8fa5a5e548901932b2a0d5878f9f1068e1807b37
-SHA256: 9e95ac4c7a5d7bc65a963852381f2718203081e5c8c34ebe129ba333d890ec3a
+Filename: pool/dev.bechou.le_0.2.5~beta2_iphoneos-arm64e.deb
+Size: 1763482
+MD5sum: c1b13578a01a37007db674bb465acd1c
+SHA1: c520cb9d8f44e02aa4f78a3b3d88c77501f8330b
+SHA256: 3eaee0abdc84a5dc68001ad1e38c1ea3b78ed78228490a43356ce829de93e9bf
