@@ -31,3 +31,37 @@ Size: 1218680
 MD5sum: de7445ae9c32326dca41f1845c723438
 SHA1: 77ced3f9f525238445ee026a273226c2a62a77f0
 SHA256: bf5c81f19114973a2d75e2ccc5bdab76f68ceb08c759b2fbae1b69fd86b0cf41
+
+Package: dev.bechou.median
+Name: Median
+Description: Chia màn CarPlay: hai hoặc ba pane trong một trang app của CarPlay, chứa app CarPlay gốc, pane của Lề và app iPhone qua bridge. Bản alpha dành cho nhóm thử.
+Maintainer: bechou
+Author: bechou
+Section: Tweaks
+Depends: firmware (>= 15.0), mobilesubstrate | ellekit, preferenceloader
+Suggests: dev.bechou.le
+Architecture: iphoneos-arm64
+Version: 0.0.5~alpha2
+Installed-Size: 3608
+Filename: pool/dev.bechou.median_0.0.5~alpha2_iphoneos-arm64.deb
+Size: 1261804
+MD5sum: 541f4083a4c9223492b3b4c70e91700f
+SHA1: e8eb07653b1e14985473df4bfaaf079c8d80cc48
+SHA256: 24fc42e28bd7b549347d3224b887ff4e223cdba9384b4f4eebbff678da30beba
+
+Package: dev.bechou.median
+Name: Median
+Description: Chia màn CarPlay: hai hoặc ba pane trong một trang app của CarPlay, chứa app CarPlay gốc, pane của Lề và app iPhone qua bridge. Bản alpha dành cho nhóm thử.
+Maintainer: bechou
+Author: bechou
+Section: Tweaks
+Depends: firmware (>= 15.0), mobilesubstrate | ellekit, preferenceloader
+Suggests: dev.bechou.le
+Architecture: iphoneos-arm64e
+Version: 0.0.5~alpha2
+Installed-Size: 3608
+Filename: pool/dev.bechou.median_0.0.5~alpha2_iphoneos-arm64e.deb
+Size: 1261758
+MD5sum: 8ba37e308a236bbb939dddf29e74167c
+SHA1: 538db514c970b387676543929bd2c4813529767c
+SHA256: 3ee8b75da710cba7b450bbfbe3a2bd041be6684b51cf1e19b89ea6827e647261
