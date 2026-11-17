@@ -54,7 +54,7 @@
     {
      "class": "DepictionTableTextView",
      "title": "Phiên bản",
-     "text": "0.2.4"
+     "text": "0.2.5"
     },
     {
      "class": "DepictionTableTextView",
@@ -83,6 +83,17 @@
    "tabname": "Thay đổi",
    "class": "DepictionStackView",
    "views": [
+    {
+     "class": "DepictionSubheaderView",
+     "title": "0.2.5",
+     "useBoldText": true,
+     "useBottomMargin": false
+    },
+    {
+     "class": "DepictionMarkdownView",
+     "useSpacing": true,
+     "markdown": "- **Cách hiện trên CarPlay chọn theo từng nơi:** Cài đặt › Lề › Cách hiện trên CarPlay có năm dòng (Dashboard, Trang app, Google Maps toàn màn hình, Google Maps chia màn hình, App khác), mỗi nơi chọn Thẻ, Bubble hoặc Không, kèm bốn mẫu nhanh. Màn chia đôi (Median, DuoDash, carplay-cast) mặc định hiện bubble. Nơi chọn Thẻ mà thẻ không vẽ được (Google Maps chưa mở, ô Dashboard đang là app bản đồ khác, thẻ đang tắt) thì bubble hiện thay.\n- Tùy chọn mới **Tự ẩn bubble khi chạm** (mặc định tắt): chạm chỗ khác trên màn CarPlay thì bubble ẩn, rồi hiện lại 3, 5 hoặc 8 giây sau lần chạm cuối. Chạm vào chính bubble thì không ẩn; đang vượt tốc độ thì bubble vẫn hiện.\n- Bảng làn đi theo màn CarPlay của VietMap và giữ suốt đoạn có làn. Lúc VietMap chưa có bảng, Lề đếm ngược tới ngã rẽ kế tiếp kèm khoảng cách.\n- Trên trang chia màn của Median, bubble giữ đúng cỡ đã chọn thay vì thu nhỏ theo ô. Median biết chỗ bubble để không đặt nút dưới nó, và viên nhạc của Median hiện được tốc độ của Lề.\n- Bubble tự tắt nếu CarPlay khởi động lại liên tục vì bubble; bật lại trong Cài đặt › Lề.\n- Chẩn đoán có thêm hai dòng “Bảng làn VietMap” và “Đếm ngược làn”, ghi lựa chọn từng nơi và cho biết bộ nghe chạm có đang chạy không.\n- Sau khi cập nhật: respring, rồi tắt hẳn và mở lại Google Maps."
+    },
     {
      "class": "DepictionSubheaderView",
      "title": "0.2.4",
