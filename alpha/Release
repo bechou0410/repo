@@ -1,0 +1,23 @@
+Origin: bechou alpha
+Label: bechou alpha
+Suite: alpha
+Version: 1.0
+Codename: ios
+Architectures: iphoneos-arm64 iphoneos-arm64e
+Components: main
+Description: Median alpha cho nhom thu (rootless va roothide).
+MD5Sum:
+ 2f2b9513ca3dbabce7b47b3b6dabd3e7 1425 Packages
+ 93f4d817366c77fb064b4d8c31027e14 627 Packages.gz
+ ff008a4d7ef4777c3c1bdae8bb8dced5 792 Packages.bz2
+ 0d653c42a1ddc90e7e77c66ff61dea01 672 Packages.xz
+SHA1:
+ b773bfe8170aac2338a9184a5316e4643ba2b95c 1425 Packages
+ fb59d2e9a270f0458b36670d992fc6df0ead1505 627 Packages.gz
+ 39524ce3f3c5f1c43aa85d94769cfc1f0420082a 792 Packages.bz2
+ aaba46a7c2a1561b903cefef2cbf5c5410c8fe37 672 Packages.xz
+SHA256:
+ 9036930f315b59ef45fe18510cc1eddce98c234d317397feb403a4aca7197b6e 1425 Packages
+ 27bebff87f524051bfc882e790c93ea893cdf0184d14fa3e4389a2a308536fec 627 Packages.gz
+ c90257b3bba6463544cb47300b499ce4cfa21c5c0d9c4af2a745d72a7a995d72 792 Packages.bz2
+ 9420b6a4715c671844405456d945bfe3df6297f01fc7cc4abc3b61e48e50d212 672 Packages.xz
