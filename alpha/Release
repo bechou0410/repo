@@ -7,17 +7,17 @@ Architectures: iphoneos-arm64 iphoneos-arm64e
 Components: main
 Description: Median alpha cho nhom thu (rootless va roothide).
 MD5Sum:
- bdda6de4c49d52da2d630d98aed6eb7f 2811 Packages
- eaef250ac51ff2fbaaf71dcd456201e7 854 Packages.gz
- 889cceab297d635c1a07861f38913787 1050 Packages.bz2
- 17d4ec71c1f9bb5ec955268da404e06f 868 Packages.xz
+ 519915bf5eff342fcc1da4e557f2a0fe 4197 Packages
+ f410e45e0e96478cca52731d118162ea 1070 Packages.gz
+ 4061be9a8826c645e5890580688a3946 1298 Packages.bz2
+ 9d9ccabdd793196d09ea1648f9ebcdb2 1052 Packages.xz
 SHA1:
- 23873745a251257ae4cb869f7fc309fcd14eaadf 2811 Packages
- e4abce9aae0b9780ed36f1ae131a0ea2cfa7d3bc 854 Packages.gz
- 6c69fa1b003ec4f08c2ea9b7b9d056381c1564bb 1050 Packages.bz2
- 0e3c2c19d6b54c49b0aaf3fb90d45236feb18093 868 Packages.xz
+ df126ee27a539f95e8847aae549d0ff8c5d1f796 4197 Packages
+ 110af5d432c4c3241eeaba2aafa3d251424326a1 1070 Packages.gz
+ 7eba34ea06afd6ca346db53a22a18bc7a986b889 1298 Packages.bz2
+ 5b7c8f733eb02a8ea24952c0592c7228d6005925 1052 Packages.xz
 SHA256:
- 29efd633f7d938920e3ea013cdc400d595217bec10469700ea8ac59dc6ff3197 2811 Packages
- 106461b619d55d9c6a045ae6f6ef60b69efa2da6cdd986fb1536ff8441a26810 854 Packages.gz
- 6206b4349356eeffa5883d5a70ed3b0adddbdbbc93b6e281bd4e2bb975ffd86a 1050 Packages.bz2
- 931f9c69fe18e785e947eb1efed68055588fddca42b933c396e0ce7b61ca0977 868 Packages.xz
+ f24895772f78efdd94b88bda8dccec13c7b7fb49c9ee25a83512860abb2b1eb7 4197 Packages
+ ee1a8efc55f63cbb17eef0609ed0491bf1c3363a260734deea75b08b1d4e8ad5 1070 Packages.gz
+ 73fddff5c20db03cabc743655bf033fc42a658625a6e83e869e768760e407b9c 1298 Packages.bz2
+ b3879eb3c2ac8cbdf956f211e806ffb1855c75aab312f984127e8e8ac38be476 1052 Packages.xz
